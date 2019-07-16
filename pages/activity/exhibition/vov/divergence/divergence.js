@@ -1,8 +1,8 @@
 var component = {
     template: `
     <div>
-        <h1>Voyage of Visuals</h1>
-        <h2>Divergence</h2>
+        <h3>Voyage of Visuals</h3>
+        <h1>Divergence</h1>
 
         <p>BUET Photographic Society returns with its signature biennial exhibition Voyage of Visuals!</p>
 

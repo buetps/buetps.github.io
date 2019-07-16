@@ -11,6 +11,15 @@
   opacity: 0
 }
 
+
+/*router link*/
+.router-link-active {
+  font-weight: bolder;
+}
+.router-link-exact-active {
+  font-size: larger;
+}
+
 /*More then 900px*/
 @media only screen and (min-width:900px) {
   #hamburger {
@@ -24,6 +33,7 @@
     padding: 100px 60px 0px 100px;
   }
 }
+
 
 /*sidebar*/
 .container {
