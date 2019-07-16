@@ -1,7 +1,7 @@
 Vue.component("sidebar", {
     template: `
     <nav>
-        <img class=logo src="images/logo.svg"></img>
+        <router-link to="/"><img class=logo src="images/logo.svg"></img></router-link>
         <vue-tree-navigation :items="items"/>
     </nav>
 
@@ -9,7 +9,7 @@ Vue.component("sidebar", {
     data: function(){
         return {
             items: [
-                {name: "Home", path: "/home"},
+                //{name: "Home", path: "/home"},
                 {name: "Notice", path: "/notice"},
                 {name: "Activity", path: "/activity",
                     children: [
