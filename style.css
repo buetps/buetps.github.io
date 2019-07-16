@@ -11,28 +11,33 @@
   opacity: 0
 }
 
-
-
-
-/*vue-tree-navigation*/
-.NavigationLevel__children {
-  padding-left: 10px;
+/*More then 900px*/
+@media only screen and (min-width:900px) {
+  #hamburger {
+    display:none
+  }
+  nav {
+    padding:20px;
+    width:auto
+  }
+  main {
+    padding: 100px 60px 0px 100px;
+  }
 }
 
-.NavigationLevel__parent {
-  font-weight:    600;
-  padding-bottom: 5px;
+/*sidebar*/
+.container {
+  height: 100%;
+  display: flex;
+}
+nav {
+  display: block;
+  height: 100%;
+}
+nav .logo {
+  display: block;
+  width: 150px;
+  padding: 20px;
 }
 
-.NavigationItem {
-  color:   #545454;
-  padding: 0;
-}
 
-.NavigationItem--active {
-  color: #42b883;
-}
-
-.NavigationToggle__icon {
-  border-color: #42b883;
-}
