@@ -1,0 +1,38 @@
+/*CSS Transtions*/
+.fade-enter-active,
+.fade-leave-active {
+  transition-duration: 0.3s;
+  transition-property: opacity;
+  transition-timing-function: ease;
+}
+
+.fade-enter,
+.fade-leave-active {
+  opacity: 0
+}
+
+
+
+
+/*vue-tree-navigation*/
+.NavigationLevel__children {
+  padding-left: 10px;
+}
+
+.NavigationLevel__parent {
+  font-weight:    600;
+  padding-bottom: 5px;
+}
+
+.NavigationItem {
+  color:   #545454;
+  padding: 0;
+}
+
+.NavigationItem--active {
+  color: #42b883;
+}
+
+.NavigationToggle__icon {
+  border-color: #42b883;
+}
