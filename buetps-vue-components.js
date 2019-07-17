@@ -17,7 +17,7 @@ Vue.component("buetps", {
     template: `
         <v-app>
 
-            <v-navigation-drawer stateless fixed value="true" v-model="drawer" app>
+            <v-navigation-drawer stateless fixed value="true" v-model="drawer" app class="pr-10">
                 <v-layout align-center justify-space-between row>
                     <router-link to="/"><img class=logo src="images/logo.svg"></img></router-link>
                     <v-btn flat fab @click.stop="drawer = !drawer"><v-icon>chevron_left</v-icon></v-btn>
