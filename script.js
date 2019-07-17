@@ -1,8 +1,20 @@
+Vue.config.devtools = true;
+
 
 import home from "/pages/home.js";
 import about from "/pages/about.js";
 import notice from "/pages/notice.js";
 
+//Committee
+import committee from "/pages/committee/committee.js";
+import committee15 from "/pages/committee/batch2015.js";
+import committee14 from "/pages/committee/batch2014.js";
+import committee13 from "/pages/committee/batch2013.js";
+import committee12 from "/pages/committee/batch2012.js";
+import committee11 from "/pages/committee/batch2011.js";
+import committee10 from "/pages/committee/batch2010.js";
+import committee09 from "/pages/committee/batch2009.js";
+import committee08 from "/pages/committee/batch2008.js";
 
 import activity from "/pages/activity/activity.js";
 
@@ -48,6 +60,17 @@ const routes = [
     {path: '/home', component: home, redirect: '/'},
     {path: '/about', component: about},
     {path: '/notice', component: notice},
+
+    {path: '/committee', component: committee},
+    {path: '/committee/15', component: committee15},
+    {path: '/committee/14', component: committee14},
+    {path: '/committee/13', component: committee13},
+    {path: '/committee/12', component: committee12},
+    {path: '/committee/11', component: committee11},
+    {path: '/committee/10', component: committee10},
+    {path: '/committee/09', component: committee09},
+    {path: '/committee/08', component: committee08},
+
 
     {path: '/activity', component: activity},
 
@@ -100,24 +123,11 @@ const routes = [
 
 
 
-
-
-
 Vue.use(VueTreeNavigation);
 
 var website = {
     template: 
-    `
-    <div class=container>
-        <span id="hamburger"><i class="material-icons">menu</i></span>
-        <sidebar/>
-        <main>
-            <transition name="fade" mode="out-in">
-                <router-view></router-view>
-            </transition>
-        </main>
-    </div>
-    `
+    `<buetps/>`
 };
 
 const router = new VueRouter({
@@ -125,9 +135,17 @@ const router = new VueRouter({
     path: '*', redirect: '/'
 });
 
+
+
 const app = new Vue({
     router,
     render: function(createElement) {
         return createElement(website);
-    }
+    },
+    data: () => ({
+        drawer: false,
+      }),
+      props: {
+        source: String
+      }
 }).$mount('#vue-entry');

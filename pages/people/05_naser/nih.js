@@ -1,10 +1,17 @@
 var component = {
+    data: function(){
+        return {
+            profile: {
+                name: "Naser Imran Hossain",
+                joinDate: 2006,
+                leavingDate: 2010,
+                portrait: "./pages/people/05_naser/portrait.jpg"
+            }
+        }
+    },
     template: `
     <div>
-        <h1>Naser Imran Hossain</h1>
-
-
-        
+        <profile :profile=this.profile></profile>  
     </div>
     `,
 };

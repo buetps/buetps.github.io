@@ -1,6 +1,15 @@
 {
+  "lang":"English",
+  "scope": "/",
+  "display": "fullscreen",
+  "start_url": "./index.html",
+
   "name": "BUET Photographic Society",
   "short_name": "BUETPS",
+
+  "orientation" : "any",
+  "description" : "BUETPS application by DhruboPaul",
+
   "icons": [
     {
       "src": "./images/icons/android-chrome-192x192.png",
@@ -13,8 +22,8 @@
       "type": "image/png"
     }
   ],
-  "start_url": "./index.html",
-  "display": "standalone",
+  
+  
   "background_color": "#FFFFFF",
-  "theme_color": "#FFFFFF"
+  "theme_color": "transparent"
 }

@@ -17,13 +17,13 @@ var component = {
         <p>14 November:</p>
         <ul>
             <li>Opening Ceremony: Inaugurated by the Vice Chancellor of BUET</li>
-            <li>Club presentation: Asian University for Women and North South University</p>
+            <li>Club presentation: Asian University for Women and North South University</li>
         </ul>
 
         <p>15 November:</p>
         <ul>
             <li>Artist Talk: with Hasan Saifuddin Chandan Sir</li>
-            <li>Club presentation: Ahsanullah University of Science and Technology, Dhaka University</p>
+            <li>Club presentation: Ahsanullah University of Science and Technology, Dhaka University</li>
         </ul>
 
         <p>16-18 November:</p>

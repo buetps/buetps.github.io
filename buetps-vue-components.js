@@ -1,65 +1,50 @@
-Vue.component("sidebar", {
+Vue.component("profile", {
+    props:['profile'],
     template: `
-    <nav>
-        <router-link to="/"><img class=logo src="images/logo.svg"></img></router-link>
-        <vue-tree-navigation :items="items"/>
-    </nav>
+        <div>
+            <v-avatar size=80 color="grey lighten-4">
+                <img :src="this.profile.portrait" :alt="this.profile.name">
+            </v-avatar>
+            <h1>{{this.profile.name}}</h1>
+            <h3>Active Member {{this.profile.joinDate}} - {{this.profile.leavingDate}}</h3>
+        </div>
+    `
+});
 
+import menuItems from "./menu.js";
+
+Vue.component("buetps", {
+    template: `
+        <v-app>
+            <v-navigation-drawer stateless fixed value="true" v-model="drawer" app>
+                <v-layout align-center justify-space-between row>
+                    <router-link to="/"><img class=logo src="images/logo.svg"></img></router-link>
+                    <v-btn flat fab @click.stop="drawer = !drawer"><v-icon>chevron_left</v-icon></v-btn>
+                </v-layout>
+                <vue-tree-navigation :items="menuItems"/>
+            </v-navigation-drawer>
+
+        
+            <v-content>
+                <v-container fill-height>
+                    <v-btn absolute fab depressed light fixed top right color="white" @click.stop="drawer = !drawer" style="top:16px !important;" v-if="!drawer">
+                        <v-icon>menu</v-icon>
+                    </v-btn>
+                    <transition name="fade" mode="out-in">
+                        <router-view></router-view>
+                    </transition>
+                </v-container>
+            </v-content>
+        </v-app>
     `,
     data: function(){
         return {
-            items: [
-                //{name: "Home", path: "/home"},
-                {name: "Notice", path: "/notice"},
-                {name: "Activity", path: "/activity",
-                    children: [
-                        {name: "Exhibition", path: "exhibition",
-                            children: [
-                                {name: "Annual Exhibition", path: "annual",
-                                    children: [
-                                        {name: "13th Annual", path: "13"},
-                                        {name: "12th Annual: Beyond", path: "12"},
-                                        {name: "11th Annual", path: "11"},
-                                        {name: "10th Annual", path: "10"},
-                                    ]
-                                },
-                                {name: "Voyage of Visuals", path: "vov",
-                                    children: [
-                                        {name: "Divergence", path: "divergence"},
-                                        {name: "Belongingness", path: "belongingness"},
-                                        {name: "Portraiture", path: "portraiture"},
-                                    ]
-                                },
-                            ]
-                        },
-                        {name: "Workshop", path: "workshop",
-                            children: [
-                                {name: "Loop", path: "loop"},
-                                {name: "Photography Quintessentials", path: "quintessentials",
-                                    children: [
-                                        {name: "Season 1", path: "1"},
-                                        {name: "Season 2", path: "2"},
-                                    ]
-                                },
-                                {name: "Discovering Streets", path: "ds",
-                                    children: [
-                                        {name: "Season 1", path: "1"},
-                                        {name: "Season 2", path: "2"},
-                                    ]
-                                },
-                            ]
-                        }
-                    ]
-                },
-                {name: "People", path: "/people",
-                    children: [
-                        {name: "Naser Imran Hossain", path: "nih"},
-                        {name: "Aneek Mustafa Anwar", path: "shojaru"},
-                        {name: "Javed Miandad", path: "javed"},
-                    ]
-                },
-                {name: "About", path: "/about"},
-            ]
+            drawer: false,
+            menuItems: menuItems
         }
-    }
+
+      },
+      props: {
+        source: String
+      }
 });

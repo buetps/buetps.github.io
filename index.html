@@ -1,21 +1,23 @@
 <!DOCTYPE html>
 
-<html>
+<html lang="en-US">
     <head>
 
         <title>BUETPS</title>
         <meta charset="utf-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">    
+        <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no, minimal-ui">
+        <link rel="manifest" href="./manifest.json">
 
         <link rel=stylesheet type="text/css" href="style.css">
+
 
         <script src="./plugin/vue.js"></script>
         <script src="./plugin/vue-router.js"></script>
 
-        <link rel="stylesheet" href="https://unpkg.com/muse-ui/dist/muse-ui.css"><!--https://muse-ui.org-->
-        <script src="https://unpkg.com/muse-ui/dist/muse-ui.js"></script>
-
-        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700,400italic">
+        <script src="https://cdn.jsdelivr.net/npm/vuetify/dist/vuetify.js"></script>
+        <link href="https://fonts.googleapis.com/css?family=Roboto:100,300,400,500,700,900|Material+Icons" rel="stylesheet">
+        <link href="https://cdn.jsdelivr.net/npm/vuetify/dist/vuetify.min.css" rel="stylesheet">
+        
         <link rel="stylesheet" href="https://cdn.bootcss.com/material-design-icons/3.0.1/iconfont/material-icons.css">
 
         <script src="https://unpkg.com/vue-tree-navigation@4.0.0/dist/vue-tree-navigation.js"></script> <!--https://misrob.github.io/vue-tree-navigation-->
@@ -25,21 +27,40 @@
     </head>
 
     <body>
+        
+        <noscript>
+            <style>
+                .no-script-container {
+                    display: flex;
+                    flex-direction: column;
+                    align-items: center;
+                    height:100vh;
+                    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif
+                } .no-script-container .logo {
+                    margin-top:10vh;
+                }.no-script-container .head {
+                    font-size: xx-large;
+                } .no-script-container .message {
+                    font-size: x-large;
+                    padding-top: 20vh;
+                }
+            </style>
+            <div class="no-script-container">
+                <div class=logo><img height="80px" src="images/logo.svg"></div>
+                <div class=head>BUET Photographic Society</div>
+                <div class=message>This browser is not supported.</div>
+            </div>
+        </noscript>
+
+
+
+
         <div id="vue-entry"></div>
 
 
-
-
-
-
-
-
-
-
-
-
-
         <script src="./buetps-vue-components.js" type="module"></script>
+
+        <script src="./initiate-sw.js"></script>
         <script src="./script.js" type="module"></script>
     </body>
 </html>
