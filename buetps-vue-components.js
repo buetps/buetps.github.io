@@ -16,6 +16,7 @@ import menuItems from "./menu.js";
 Vue.component("buetps", {
     template: `
         <v-app>
+
             <v-navigation-drawer stateless fixed value="true" v-model="drawer" app>
                 <v-layout align-center justify-space-between row>
                     <router-link to="/"><img class=logo src="images/logo.svg"></img></router-link>
@@ -26,7 +27,7 @@ Vue.component("buetps", {
 
         
             <v-content>
-                <v-container fill-height>
+                <v-container fill-width>
                     <v-btn absolute fab depressed light fixed top right color="white" @click.stop="drawer = !drawer" style="top:16px !important;" v-if="!drawer">
                         <v-icon>menu</v-icon>
                     </v-btn>
@@ -35,6 +36,8 @@ Vue.component("buetps", {
                     </transition>
                 </v-container>
             </v-content>
+
+
         </v-app>
     `,
     data: function(){
