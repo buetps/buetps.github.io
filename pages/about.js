@@ -30,19 +30,19 @@ var component = {
 
             location.reload(true);
         },
+        showLocalNotification: function(title, body){
+            navigator.serviceWorker.ready
+            .then(function(registration){
+                registration.showNotification(title,{body});
+            })
+        },
         askNotificationPermission: function(){
-            Notification.requestPermission(function (permission) {
+            Notification.requestPermission((permission) => {
                 if (permission === "granted") {
-                  var notification = new Notification("Notification Granted");
+                    this.showLocalNotification("Notification Granted", "We will let you know if something comes up.");
                 }
             });
         },
-        testNotification: function(){
-            navigator.serviceWorker.ready
-            .then(function(registration){
-                registration.showNotification("Test",{body:"Body"});
-            })
-        }
     },
     mounted: function(){
         this.notificationPermission = window.Notification.permission;
