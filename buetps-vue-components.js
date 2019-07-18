@@ -17,7 +17,7 @@ Vue.component("buetps", {
     template: `
         <v-app>
 
-            <v-navigation-drawer stateless fixed value="true" v-model="drawer" app class="pr-10">
+            <v-navigation-drawer absolute stateless floating light app temporary value="true" v-model="drawer">
                 <v-layout align-center justify-space-between row>
                     <router-link to="/"><img class=logo src="images/logo.svg"></img></router-link>
                     <v-btn flat fab @click.stop="drawer = !drawer"><v-icon>chevron_left</v-icon></v-btn>
@@ -25,18 +25,13 @@ Vue.component("buetps", {
                 <vue-tree-navigation :items="menuItems"/>
             </v-navigation-drawer>
 
-        
-            <v-content>
-                <v-container fill-width>
-                    <v-btn absolute fab depressed light fixed top right color="white" @click.stop="drawer = !drawer" style="top:16px !important;" v-if="!drawer">
-                        <v-icon>menu</v-icon>
-                    </v-btn>
-                    <transition name="fade" mode="out-in">
-                        <router-view></router-view>
-                    </transition>
-                </v-container>
-            </v-content>
+            <v-btn absolute fab depressed light top right color="white" @click.stop="drawer = !drawer" style="top:16px !important; padding:4px;" v-if="!drawer">
+                <v-img src="./images/logo.svg"></v-img>
+            </v-btn>
 
+            <transition name="fade" mode="out-in">
+                <router-view></router-view>
+            </transition>
 
         </v-app>
     `,
@@ -50,4 +45,18 @@ Vue.component("buetps", {
       props: {
         source: String
       }
+});
+
+Vue.component("page-head", {
+    template:`
+        <div :style=componentStyle>
+            <h1><slot></slot></h1>
+        </div>
+    `,
+    prop: ['color'],
+    computed: {
+        componentStyle: function(){
+            return "color:" + this.$attrs.color; 
+        }
+    }
 });
