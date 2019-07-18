@@ -15,7 +15,7 @@ const check = () => {
 
 const registerServiceWorker = async () => {
   if(navigator.serviceWorker.controller){
-    return navigator.serviceWorker.ready.then();
+    return navigator.serviceWorker.ready;
   }
 
   const serviceWorkerRegistration = await navigator.serviceWorker.register("service-worker.js", {scope: "./"})
@@ -26,27 +26,9 @@ const registerServiceWorker = async () => {
   return serviceWorkerRegistration;
 }
 
-const requestNotificationPermission = async () => {
-  const permission = await window.Notification.requestPermission(); // value of permission can be 'granted', 'default', 'denied'
-
-  if(permission !== 'granted'){
-      throw new Error('Permission not granted for Notification');
-  }
-}
-
-const showLocalNotification = (title, body, serviceWorkerRegistration) => {
-  const options = {
-    body,
-  };
-  serviceWorkerRegistration.showNotification(title, options);
-}
-
 const main = async () => {
   check();
   const serviceWorkerRegistration = await registerServiceWorker();
-  const permission =  await requestNotificationPermission();
-
-  showLocalNotification('This is title', 'this is the message', serviceWorkerRegistration);
 }
 
 main();

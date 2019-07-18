@@ -5,8 +5,6 @@ var component = {
         
         <v-btn flat @click="reset">Reset the Application</v-btn>
         <v-btn flat @click="askNotificationPermission">Allow Notification</v-btn>
-        <v-btn flat @click="testNotification">Test Notification</v-btn>
-        {{notificationPermission}}
 
     </div>
     `,
@@ -34,9 +32,8 @@ var component = {
         },
         askNotificationPermission: function(){
             Notification.requestPermission(function (permission) {
-                // If the user accepts, let's create a notification
                 if (permission === "granted") {
-                  var notification = new Notification("Hi there!");
+                  var notification = new Notification("Notification Granted");
                 }
             });
         },
