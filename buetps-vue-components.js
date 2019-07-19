@@ -25,26 +25,37 @@ Vue.component("buetps", {
                 <vue-tree-navigation :items="menuItems"/>
             </v-navigation-drawer>
 
-            <v-btn absolute fab depressed light top right color="white" @click.stop="drawer = !drawer" style="top:16px !important; padding:4px;" v-if="!drawer">
+            <v-btn absolute fab depressed light top right color="white" style="top:16px !important; padding:4px;" @click.stop="toggleNav" v-if="!drawer">
                 <v-img src="./images/logo.svg"></v-img>
             </v-btn>
 
             <transition name="fade" mode="out-in">
-                <router-view></router-view>
+                <router-view :style="routerViewStyle"></router-view>
             </transition>
 
         </v-app>
     `,
     data: function(){
         return {
-            drawer: false,
-            menuItems: menuItems
+            menuItems: menuItems,
+            routerViewStyle: "padding-left:0px",
+            drawer : false,
         }
-
       },
       props: {
-        source: String
-      }
+          nav: Boolean
+      },
+      methods: {
+        toggleNav(){
+            this.drawer=!this.drawer;
+            this.$emit('update:this.nav', true);
+        }
+      },
+      watch: {
+          drawer: function(val){
+              this.routerViewStyle = val ? "padding-left:300px;" : "padding-left:0px";
+          }
+      },
 });
 
 Vue.component("page-head", {

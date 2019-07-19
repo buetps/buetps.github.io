@@ -126,8 +126,7 @@ const routes = [
 Vue.use(VueTreeNavigation);
 
 var website = {
-    template: 
-    `<buetps/>`
+    template: `<buetps></buetps>`,
 };
 
 const router = new VueRouter({
@@ -141,11 +140,5 @@ const app = new Vue({
     router,
     render: function(createElement) {
         return createElement(website);
-    },
-    data: () => ({
-        drawer: false,
-      }),
-      props: {
-        source: String
-      }
+    }
 }).$mount('#vue-entry');
