@@ -1,54 +1,51 @@
-Vue.config.devtools = true;
-
-
-import home from "/pages/home.js";
-import about from "/pages/about.js";
-import notice from "/pages/notice.js";
+import home from "/js/pages/home.js";
+import about from "/js/pages/about.js";
+import notice from "/js/pages/notice.js";
 
 //Committee
-import committee from "/pages/committee/committee.js";
-import committee15 from "/pages/committee/batch2015.js";
-import committee14 from "/pages/committee/batch2014.js";
-import committee13 from "/pages/committee/batch2013.js";
-import committee12 from "/pages/committee/batch2012.js";
-import committee11 from "/pages/committee/batch2011.js";
-import committee10 from "/pages/committee/batch2010.js";
-import committee09 from "/pages/committee/batch2009.js";
-import committee08 from "/pages/committee/batch2008.js";
+import committee from "/js/pages/committee/committee.js";
+import committee15 from "/js/pages/committee/batch2015.js";
+import committee14 from "/js/pages/committee/batch2014.js";
+import committee13 from "/js/pages/committee/batch2013.js";
+import committee12 from "/js/pages/committee/batch2012.js";
+import committee11 from "/js/pages/committee/batch2011.js";
+import committee10 from "/js/pages/committee/batch2010.js";
+import committee09 from "/js/pages/committee/batch2009.js";
+import committee08 from "/js/pages/committee/batch2008.js";
 
-import activity from "/pages/activity/activity.js";
+import activity from "/js/pages/activity/activity.js";
 
 //Exhibition
-import exhibition from "/pages/activity/exhibition/exhibition.js";
+import exhibition from "/js/pages/activity/exhibition/exhibition.js";
 
-import vov from "/pages/activity/exhibition/vov/vov.js";
-import divergence from "/pages/activity/exhibition/vov/divergence/divergence.js";
-import belongingness from "/pages/activity/exhibition/vov/belongingness/belongingness.js";
-import portraiture from "/pages/activity/exhibition/vov/portraiture/portraiture.js";
+import vov from "/js/pages/activity/exhibition/vov/vov.js";
+import divergence from "/js/pages/activity/exhibition/vov/divergence/divergence.js";
+import belongingness from "/js/pages/activity/exhibition/vov/belongingness/belongingness.js";
+import portraiture from "/js/pages/activity/exhibition/vov/portraiture/portraiture.js";
 
-import annual from "/pages/activity/exhibition/annual/annual.js";
-import annual13 from "/pages/activity/exhibition/annual/13/annual13.js";
-import annual12 from "/pages/activity/exhibition/annual/12/annual12.js";
-import annual11 from "/pages/activity/exhibition/annual/11/annual11.js";
-import annual10 from "/pages/activity/exhibition/annual/10/annual10.js";
+import annual from "/js/pages/activity/exhibition/annual/annual.js";
+import annual13 from "/js/pages/activity/exhibition/annual/13/annual13.js";
+import annual12 from "/js/pages/activity/exhibition/annual/12/annual12.js";
+import annual11 from "/js/pages/activity/exhibition/annual/11/annual11.js";
+import annual10 from "/js/pages/activity/exhibition/annual/10/annual10.js";
 
 //Workshop
-import workshop from "/pages/activity/workshop/workshop.js";
+import workshop from "/js/pages/activity/workshop/workshop.js";
 
-import loop from "/pages/activity/workshop/loop/loop.js";
-import quintessentials from "/pages/activity/workshop/quintessentials/quintessentials.js";
-import quintessentials1 from "/pages/activity/workshop/quintessentials/1/quintessentials1.js";
-import quintessentials2 from "/pages/activity/workshop/quintessentials/2/quintessentials2.js";
+import loop from "/js/pages/activity/workshop/loop/loop.js";
+import quintessentials from "/js/pages/activity/workshop/quintessentials/quintessentials.js";
+import quintessentials1 from "/js/pages/activity/workshop/quintessentials/1/quintessentials1.js";
+import quintessentials2 from "/js/pages/activity/workshop/quintessentials/2/quintessentials2.js";
 
-import ds from "/pages/activity/workshop/ds/ds.js";
-import ds1 from "/pages/activity/workshop/ds/1/ds1.js";
-import ds2 from "/pages/activity/workshop/ds/2/ds2.js";
+import ds from "/js/pages/activity/workshop/ds/ds.js";
+import ds1 from "/js/pages/activity/workshop/ds/1/ds1.js";
+import ds2 from "/js/pages/activity/workshop/ds/2/ds2.js";
 
 //People
-import people from "/pages/people/people.js";
-import nih from "/pages/people/05_naser/nih.js";
-import shojaru from "/pages/people/07_aneek/aneek.js";
-import javed from "/pages/people/09_javed/javed.js";
+import people from "/js/pages/people/people.js";
+import nih from "/js/pages/people/05_naser/nih.js";
+import shojaru from "/js/pages/people/07_aneek/aneek.js";
+import javed from "/js/pages/people/09_javed/javed.js";
 
 
 
@@ -116,29 +113,9 @@ const routes = [
 
 
 
-
-
-
-
-
-
-
-Vue.use(VueTreeNavigation);
-
-var website = {
-    template: `<buetps></buetps>`,
-};
-
 const router = new VueRouter({
     routes: routes,
     path: '*', redirect: '/'
 });
 
-
-
-const app = new Vue({
-    router,
-    render: function(createElement) {
-        return createElement(website);
-    }
-}).$mount('#vue-entry');
+export default router;
