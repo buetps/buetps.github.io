@@ -76,7 +76,7 @@ Vue.component("general-page", {
     template:`
     <v-card class="mx-auto" width=100vw min-height=100vh flat>
         <div class="buetps-page-head" :style="'background-color:'+this.$attrs.color">
-            <div class="buetps-page-head-subtitle">{{this.$attrs.subtitle}}</div>
+            <div class="buetps-page-head-subtitle" v-if="this.$attrs.subtitle">{{this.$attrs.subtitle}}</div>
             <div class="buetps-page-head-title">{{this.$attrs.title}}</div>
         </div>
         
