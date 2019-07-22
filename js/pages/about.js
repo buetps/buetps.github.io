@@ -26,7 +26,14 @@ var component = {
             }
 
             //clear cache
-            //later
+            caches.keys()
+            .then(function (keyList) {
+              return Promise.all(keyList.map(function (key) {
+                if (key == 'buetps-precache') {
+                  return caches.delete(key);
+                }
+              }));
+            })
 
             location.reload(true);
         },
