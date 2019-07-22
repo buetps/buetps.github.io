@@ -16,14 +16,6 @@ self.addEventListener("install", function (event) {
 
 self.addEventListener("activate", function (event) {
   event.waitUntil(self.clients.claim());
-
-
-  //var dateItHappens = new Date(1563502800000);
-  //var millisTillOccurence = dateItHappens.getTime() - new Date().getTime();
-  setTimeout(function(){
-    self.registration.showNotification("title",{body:"body"});
-  }, 50000);
-
 });
 
 

@@ -98,6 +98,38 @@ Vue.component("general-page", {
         return {
             step: 1
         }
+    },
+    methods: {
+        goNext: function(){
+            if(this.step < this.$attrs.pages.length){
+                this.step++;
+            }
+        },
+        goPrevious: function(){
+            if(this.step > 1){
+                this.step--;
+            }
+        }
+    },
+    mounted(){
+        this._keyListener = function(e) {
+            switch(e.keyCode) {
+                case 37:
+                    e.preventDefault();
+                    this.goPrevious();
+                    break;
+                case 39:
+                    e.preventDefault();
+                    this.goNext();
+                    break;
+                default:
+                  //
+            }
+        };
+        document.addEventListener('keydown', this._keyListener.bind(this));
+    },
+    beforeDestroy() {
+        document.removeEventListener('keydown', this._keyListener);
     }
     
 });
