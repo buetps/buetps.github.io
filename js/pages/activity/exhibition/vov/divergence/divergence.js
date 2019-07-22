@@ -1,10 +1,7 @@
-var component = {
-    template: `
-    <div>
-        <h3>Voyage of Visuals</h3>
-        <h1>Divergence</h1>
-
-        <p>BUET Photographic Society returns with its signature biennial exhibition Voyage of Visuals!</p>
+var pages = [
+  {
+      content: `
+      <p>BUET Photographic Society returns with its signature biennial exhibition Voyage of Visuals!</p>
 
         <p>We are delighted to announce that the exhibition for Voyage of Visuals: DIVERGENCE is going to 
         take place from 1st to 4th of November, 2018 at Gallery 3, Bangladesh Shilpakala Academy, Dhaka,Bangladesh</p>
@@ -21,13 +18,15 @@ var component = {
         <p>Date: 1st to 4th November, 2018</p>
         <p>Time: 3 pm to 8 pm (1st November), 
           11 am to 8 pm (2nd to 4th November)</p>
+      `
+  }
+];
 
-        <p>Detailed schedule for 3 days will be updated soon.</p>
 
-    </div>
-    `
+
+var component = {
+  data: () => ({pages}),
+  template: `<general-page color="#841b18" title="Divergence" :pages="pages"></general-page>`
 };
 
 export default component;
-
-

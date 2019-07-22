@@ -1,9 +1,6 @@
-var component = {
-    template: `
-    <div>
-        <h3>Voyage of Visuals</h3>
-        <h1>Portraiture</h1>
-
+var pages = [
+    {
+        content: `
         <p>BUETPS is delighted to announce that the exhibition VoV will take place on October 11-13 at Gallery Drik.</p>
 
         <p>After rigorous judging and curating phase VoV is all set to exhibit 60 single photographs and 8 photo stories from 56 photographers.</p>
@@ -22,12 +19,17 @@ var component = {
         <p>Exhibition Date: October 11-13, 2014</p>
         <p>Venue: DRIK Gallery, Dhanmondi, Dhaka.</p>
               
-        
         <p>This exhibition is sponsored by Lafarge Surma Cement Limited.</p>
-    </div>
-    `
-};
-
-export default component;
-
+        `
+    }
+  ];
+  
+  
+  
+  var component = {
+    data: () => ({pages}),
+    template: `<general-page color="#ffea00" title="Portraiture" :pages="pages"></general-page>`
+  };
+  
+  export default component;
 
