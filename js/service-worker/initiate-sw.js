@@ -26,9 +26,21 @@ const registerServiceWorker = async () => {
   return serviceWorkerRegistration;
 }
 
+const unregisterServiceWorker = async () => {
+  if(window.navigator && navigator.serviceWorker) {
+    navigator.serviceWorker.getRegistrations()
+    .then(function(registrations) {
+        for(let registration of registrations) {
+            registration.unregister();
+        }
+    });
+  }
+};
+
 const main = async () => {
   check();
-  const serviceWorkerRegistration = await registerServiceWorker();
+  //const serviceWorkerRegistration = await registerServiceWorker();
+  await unregisterServiceWorker();
 }
 
 main();
