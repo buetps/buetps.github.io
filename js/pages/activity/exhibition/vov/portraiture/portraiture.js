@@ -28,7 +28,7 @@ var pages = [
   
   var component = {
     data: () => ({pages}),
-    template: `<general-page color="#ffea00" title="Portraiture" :pages="pages"></general-page>`
+    template: `<general-page color="#ffea00" title="Portraiture" subtitle="Voyage of Visuals" :pages="pages"></general-page>`
   };
   
   export default component;

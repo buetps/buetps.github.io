@@ -75,7 +75,10 @@ Vue.component("page-head", {
 Vue.component("general-page", {
     template:`
     <v-card class="mx-auto" width=100vw min-height=100vh flat>
-        <div class="buetps-page-head" :style="'background-color:'+this.$attrs.color">{{this.$attrs.title}}</div>
+        <div class="buetps-page-head" :style="'background-color:'+this.$attrs.color">
+            <div class="buetps-page-head-subtitle">{{this.$attrs.subtitle}}</div>
+            <div class="buetps-page-head-title">{{this.$attrs.title}}</div>
+        </div>
         
         <v-window v-model="step">
             <v-window-item v-for="(page,index) in this.$attrs.pages" :value="index+1" :key="index">
@@ -93,7 +96,7 @@ Vue.component("general-page", {
 
     </v-card>
     `,
-    prop: ['color', 'title', 'pages'],
+    prop: ['color', 'title', 'pages', 'subtitle'],
     data: function(){
         return {
             step: 1
