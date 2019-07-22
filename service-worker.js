@@ -4,6 +4,8 @@ const precacheFiles = [
 ];
 
 self.addEventListener("install", function (event) {
+
+  /*
   self.skipWaiting();
 
   event.waitUntil(
@@ -11,15 +13,31 @@ self.addEventListener("install", function (event) {
       return cache.addAll(precacheFiles);
     })
   );
+  */
+
+ caches.keys()
+ .then(function (keyList) {
+   return Promise.all(keyList.map(function (key) {
+     if (key == CACHE) {
+       return caches.delete(key);
+     }
+   }));
+ })
+
+
 });
 
 
 self.addEventListener("activate", function (event) {
+  /*
   event.waitUntil(self.clients.claim());
+  */
 });
 
 
 self.addEventListener("fetch", function (event) { 
+
+  /*
   if (event.request.method !== "GET") return;
 
   event.respondWith(
@@ -43,6 +61,9 @@ self.addEventListener("fetch", function (event) {
       }
     )
   );
+  */
+
+
 });
 
 

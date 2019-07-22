@@ -86,7 +86,7 @@ Vue.component("general-page", {
         </v-window>
 
 
-        <div style="position:fixed;right:5vw;bottom:5vh;">
+        <div v-if="this.$attrs.pages.length>1" style="position:fixed;right:5vw;bottom:5vh;">
             <v-btn icon :disabled="step === 1" @click="step--"><v-icon>chevron_left</v-icon></v-btn>
             <v-btn icon :disabled="step === this.$attrs.pages.length" @click="step++"><v-icon>chevron_right</v-icon></v-btn>
         </div>
