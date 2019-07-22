@@ -4,7 +4,7 @@ var component = {
         <h1>About</h1>
         
         <v-btn flat @click="reset">Reset the Application</v-btn>
-        <v-btn flat @click="askNotificationPermission">Allow Notification</v-btn>
+        
 
     </div>
     `,
