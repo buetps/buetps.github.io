@@ -33,6 +33,15 @@ import annual10 from "/js/pages/activity/exhibition/annual/10/annual10.js";
 import workshop from "/js/pages/activity/workshop/workshop.js";
 
 import loop from "/js/pages/activity/workshop/loop/loop.js";
+import loop1 from "/js/pages/activity/workshop/loop/1/loop1.js";
+import loop2 from "/js/pages/activity/workshop/loop/2/loop2.js";
+import loop3 from "/js/pages/activity/workshop/loop/3/loop3.js";
+import loop4 from "/js/pages/activity/workshop/loop/4/loop4.js";
+import loop5 from "/js/pages/activity/workshop/loop/5/loop5.js";
+import loop6 from "/js/pages/activity/workshop/loop/6/loop6.js";
+import loop7 from "/js/pages/activity/workshop/loop/7/loop7.js";
+import loop8 from "/js/pages/activity/workshop/loop/8/loop8.js";
+
 import quintessentials from "/js/pages/activity/workshop/quintessentials/quintessentials.js";
 import quintessentials1 from "/js/pages/activity/workshop/quintessentials/1/quintessentials1.js";
 import quintessentials2 from "/js/pages/activity/workshop/quintessentials/2/quintessentials2.js";
@@ -87,15 +96,14 @@ const routes = [
     {path: '/activity/workshop', component: workshop},
 
     {path: '/activity/workshop/loop', component: loop},
-    {path: '/activity/workshop/loop/9', component: activity},
-    {path: '/activity/workshop/loop/8', component: activity},
-    {path: '/activity/workshop/loop/7', component: activity},
-    {path: '/activity/workshop/loop/6', component: activity},
-    {path: '/activity/workshop/loop/5', component: activity},
-    {path: '/activity/workshop/loop/4', component: activity},
-    {path: '/activity/workshop/loop/3', component: activity},
-    {path: '/activity/workshop/loop/2', component: activity},
-    {path: '/activity/workshop/loop/1', component: activity},
+    {path: '/activity/workshop/loop/8', component: loop8},
+    {path: '/activity/workshop/loop/7', component: loop7},
+    {path: '/activity/workshop/loop/6', component: loop6},
+    {path: '/activity/workshop/loop/5', component: loop5},
+    {path: '/activity/workshop/loop/4', component: loop4},
+    {path: '/activity/workshop/loop/3', component: loop3},
+    {path: '/activity/workshop/loop/2', component: loop2},
+    {path: '/activity/workshop/loop/1', component: loop1},
 
     {path: '/activity/workshop/quintessentials', component: quintessentials},
     {path: '/activity/workshop/quintessentials/2', component: quintessentials2},

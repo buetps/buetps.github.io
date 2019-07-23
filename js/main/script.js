@@ -4,15 +4,7 @@ Vue.use(VueTreeNavigation);
 
 
 var website = {
-    template: `<buetps></buetps>`,
-    mounted() {
-        document.addEventListener('keydown', function(event){
-            if(event.keyCode === 32){
-               event.preventDefault();
-               this.$store.commit("toggleNav"); 
-            }
-        }.bind(this));
-    },
+    template: `<buetps></buetps>`
 };
 
 

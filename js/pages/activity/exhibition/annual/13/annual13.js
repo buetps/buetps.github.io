@@ -1,6 +1,4 @@
-var pages = [
-    {
-        content: `
+var page1 = `
             <p>With the spirit to create an exemplary essence of visuals, BUET Photographic Society - BUETPS started its journey and 
             in this glorious odyssey in the last two decades, BUETPS escalated its philosophy of beatific art of photography among students, 
             professionals and other photography enthusiasts and established itself as one of the most prominent and promising bunch of 
@@ -13,17 +11,15 @@ var pages = [
             
             <p>BUETPS is proud to present its most prized event, 13th Annual Exhibition. The Exhibition will be inaugurated on the 20th June, 
             2019 at Gallery 4, National Art Gallery, Bangladesh Shilpakala Academy. We invite you all to come and enjoy the visual delicacy.</p>
-        `
-    }
-];
-
+        `;
 
 
 var component = {
-    data: () => ({pages}),
-    template: `<general-page color="#169e78" title="13th Annual Exhibition" :pages="pages"></general-page>`
+    template: `
+    <general-page title="13th Annual Exhibition" color="#169e78">
+        <general-page-content index=0>${page1}</general-page-content>
+    </general-page>
+    `
 };
   
 export default component;
-
-

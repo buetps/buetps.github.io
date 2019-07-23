@@ -1,6 +1,4 @@
-var pages = [
-    {
-        content: `
+var page1 = `
         <p>BUETPS is delighted to announce that the exhibition for Voyage of Visuals: Belongingness is going to take place from 17th to 19th of May at the Drik Gallery.</p>
 
         <p>After an eventful month of call for photos and the challenging task of selecting the final set of photos for the exhibition 
@@ -16,15 +14,14 @@ var pages = [
         <p>Venue: Drik Gallery, Dhanmondi, Dhaka.</p>
         <p>Time: 3pm-8pm</p>
         <p>Date: 17th to 19th May, 2016</p>
-        `
-    }
-];
-
-
+        `;
 
 var component = {
-    data: () => ({pages}),
-    template: `<general-page color="#3a8e77" title="Belongingness" subtitle="Voyage of Visuals" :pages="pages"></general-page>`
+    template: `
+    <general-page title="Belongingness" subtitle="Voyage of Visuals" color="#3a8e77">
+        <general-page-content index=0>${page1}</general-page-content>
+    </general-page>
+    `
 };
   
 export default component;

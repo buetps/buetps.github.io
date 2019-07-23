@@ -4,8 +4,8 @@ const store = new Vuex.Store({
         isNavOn: false,
     },
     mutations: {
-        toggleNav (state) {
-            state.isNavOn = !state.isNavOn;
+        setNav (state, navFlag) {
+            state.isNavOn = navFlag;
         }
     },
     getters: {
