@@ -24,7 +24,7 @@ var page1 = `
         <p>09:30am - 1:30pm - Review</p>
         <p>3:00pm onwards - Official Outing</p>
         
-        <h3>Day 3, 29th June: 
+        <h3>Day 3, 29th June: </h3>
         <p>2:30pm - 6:30pm - Final printed review session and edit</p>
         
         <h4>Who can enter</h4> 

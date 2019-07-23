@@ -16,8 +16,8 @@ import menuItems from "/js/data/menu.js";
 Vue.component("buetps", {
     template: `
         <v-app>
-
-            <v-navigation-drawer fixed stateless floating light app temporary value="true" v-model="isNavOn" width=350>
+            <!-- stateless floating light app temporary -->
+            <v-navigation-drawer fixed touchless :disable-route-watcher=true value="true" v-model="isNavOn" width=350>
                 <v-layout align-center justify-space-between row>
                     <router-link to="/"><img class=logo src="images/logo.svg"></img></router-link>   
                     <v-btn flat fab @click.stop="setNavFalse"><v-icon>close</v-icon></v-btn>
@@ -25,10 +25,7 @@ Vue.component("buetps", {
                 <vue-tree-navigation :items="menuItems"/>
             </v-navigation-drawer>
 
-            <v-btn absolute fab depressed light top right color="white" style="top:16px !important; padding:4px;" @click.stop="setNavTrue">
-                <!--<v-img src="./images/logo.svg"></v-img>-->
-                <v-icon>menu</v-icon>
-            </v-btn>
+            <v-btn absolute fab depressed light top right color="white" style="top:16px !important; padding:4px;" @click.stop="toggleNav"><v-icon>menu</v-icon></v-btn>
 
             <v-content>
                 <v-container fill-width>
@@ -63,6 +60,9 @@ Vue.component("buetps", {
         },
         setNavFalse(){
             this.$store.commit('setNav', false);
+        },
+        toggleNav(){
+            this.$store.commit('setNav', !this.$store.getters.getNavFlag);
         }
     },
     mounted(){
