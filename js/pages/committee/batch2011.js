@@ -1,31 +1,33 @@
+var page1 = `
+<v-list two-line>
+    <buetps-list-item title="Dhrubo Jyoti Paul" subtitle="President"></buetps-list-item>
+    <buetps-list-item title="Udaya Bir Saha" subtitle="Vice-President"></buetps-list-item>
+    <buetps-list-item title="Md. Rizwanul Hasan" subtitle="General Secretary"></buetps-list-item>
+    <buetps-list-item title="Mahdi Zaman" subtitle="Organizing Secretary"></buetps-list-item>
+    <buetps-list-item title="Badrul Hasan Tanjil" subtitle="Treasurer"></buetps-list-item>
+    <buetps-list-item title="Ibrahim Tahmid" subtitle="Promotion and Publication Secretary"></buetps-list-item>
+    <buetps-list-item title="Fahmida Hossain Ela" subtitle="Exhibition Secretary"></buetps-list-item>
+    <buetps-list-item title="Tanveer Ahmed Tomal" subtitle="Office Secretary"></buetps-list-item>
+    <buetps-list-item title="I.H.M. Shamsuzzoha" subtitle="Executive Member"></buetps-list-item>
+    <buetps-list-item title="Bushra Behrose" subtitle="Executive Member"></buetps-list-item>
+    <buetps-list-item title="Jubayed Rusho" subtitle="Executive Member"></buetps-list-item>
+    <buetps-list-item title="Fahim Faisal Khan Shapnil" subtitle="Executive Member"></buetps-list-item>
+    <buetps-list-item title="Imtiar Jalal Niloy" subtitle="Executive Member"></buetps-list-item>
+    <buetps-list-item title="Oliur Rahman" subtitle="Executive Member"></buetps-list-item>
+    <buetps-list-item title="Hasan Mahmud Prottoy" subtitle="Executive Member"></buetps-list-item>
+    <buetps-list-item title="Ahmed Asif Sami" subtitle="Executive Member"></buetps-list-item>
+    <buetps-list-item title="Nasir Hossain" subtitle="Executive Member"></buetps-list-item>
+</v-list>
+`;
+
+
 var component = {
     template: `
-    <div>
-        <h1>Executive Committee</h1>
-
-        President	Dhrubo Jyoti Paul	1105106
-        Vice-President	Udaya Bir Saha	1105110
-        General Secretary	Md. Rizwanul Hasan	1204187
-        Organizing Secretary	Mahdi Zaman	1106075
-        Treasurer	Badrul Hasan Tanjil	1210099
-        Promotion and Publication Secretary	Ibrahim Tahmid	1205024
-        Exhibition Secretary	Fahmida Hossain Ela	1201005
-        Office Secretary	Tanveer Ahmed Tomal	1304063
-        Executive Member	I.H.M. Shamsuzzoha	1110024
-        Executive Member	Bushra Behrose	1102045
-        Executive Member	Jubayed Rusho	1204158
-        Executive Member	Fahim Faisal Khan Shapnil	1301037
-        Executive Member	Imtiar Jalal Niloy	1304056
-        Executive Member	Oliur Rahman	1310035
-        Executive Member	Hasan Mahmud Prottoy 	 1306154
-        Executive Member	Ahmed Asif Sami	 1410132
-        Executive Member	Nasir Hossain	1410044
-
-
-    </div>
+    <general-page title="Batch '11" subtitle="Executive Committee" color="#3a8e77">
+        <general-page-content index=0>${page1}</general-page-content>
+    </general-page>
     `
 };
-
+  
 export default component;
-
 

@@ -97,6 +97,26 @@ Vue.component("page-head", {
     }
 });
 
+
+Vue.component('buetps-list-item', {
+    template: `
+    <v-list-tile>
+        <v-list-tile-content>
+            <v-list-tile-title>{{this.title}}</v-list-tile-title>
+            <v-list-tile-sub-title>{{this.subtitle}}</v-list-tile-sub-title>
+        </v-list-tile-content>
+    </v-list-tile>
+    `,
+    props: ['title', 'subtitle'],
+});
+Vue.component('buetps-list', {
+    template: `
+    <v-list two-line>
+        <slot></slot>
+    </v-list>
+    `
+});
+
 Vue.component("general-page-content", {
     template: `
         <v-window-item :value="this.$attrs.index" :key="this.$attrs.index">
@@ -177,4 +197,5 @@ Vue.component("general-page", {
     }
     
 });
+
 
