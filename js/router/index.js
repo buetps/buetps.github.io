@@ -12,6 +12,9 @@ import committee11 from "/js/pages/committee/batch2011.js";
 import committee10 from "/js/pages/committee/batch2010.js";
 import committee09 from "/js/pages/committee/batch2009.js";
 import committee08 from "/js/pages/committee/batch2008.js";
+import committee07 from "/js/pages/committee/batch2007.js";
+import committee06 from "/js/pages/committee/batch2006.js";
+import committee05 from "/js/pages/committee/batch2005.js";
 
 import activity from "/js/pages/activity/activity.js";
 
@@ -76,6 +79,9 @@ const routes = [
     {path: '/committee/10', component: committee10},
     {path: '/committee/09', component: committee09},
     {path: '/committee/08', component: committee08},
+    {path: '/committee/07', component: committee07},
+    {path: '/committee/06', component: committee06},
+    {path: '/committee/05', component: committee05},
 
 
     {path: '/activity', component: activity},

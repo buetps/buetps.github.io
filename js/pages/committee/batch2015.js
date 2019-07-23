@@ -1,29 +1,33 @@
 var page1 = `
 <v-list two-line>
-    <buetps-list-item title="Dhrubo Jyoti Paul" subtitle="President"></buetps-list-item>
-    <buetps-list-item title="Udaya Bir Saha" subtitle="Vice-President"></buetps-list-item>
-    <buetps-list-item title="Md. Rizwanul Hasan" subtitle="General Secretary"></buetps-list-item>
-    <buetps-list-item title="Mahdi Zaman" subtitle="Organizing Secretary"></buetps-list-item>
-    <buetps-list-item title="Badrul Hasan Tanjil" subtitle="Treasurer"></buetps-list-item>
-    <buetps-list-item title="Ibrahim Tahmid" subtitle="Promotion and Publication Secretary"></buetps-list-item>
-    <buetps-list-item title="Fahmida Hossain Ela" subtitle="Exhibition Secretary"></buetps-list-item>
-    <buetps-list-item title="Tanveer Ahmed Tomal" subtitle="Office Secretary"></buetps-list-item>
-    <buetps-list-item title="I.H.M. Shamsuzzoha" subtitle="Executive Member"></buetps-list-item>
-    <buetps-list-item title="Bushra Behrose" subtitle="Executive Member"></buetps-list-item>
-    <buetps-list-item title="Jubayed Rusho" subtitle="Executive Member"></buetps-list-item>
-    <buetps-list-item title="Fahim Faisal Khan Shapnil" subtitle="Executive Member"></buetps-list-item>
-    <buetps-list-item title="Imtiar Jalal Niloy" subtitle="Executive Member"></buetps-list-item>
-    <buetps-list-item title="Oliur Rahman" subtitle="Executive Member"></buetps-list-item>
-    <buetps-list-item title="Hasan Mahmud Prottoy" subtitle="Executive Member"></buetps-list-item>
-    <buetps-list-item title="Ahmed Asif Sami" subtitle="Executive Member"></buetps-list-item>
-    <buetps-list-item title="Nasir Hossain" subtitle="Executive Member"></buetps-list-item>
+    <buetps-list-item title="Ahnaf Shahriyar" subtitle="President"></buetps-list-item>
+    <buetps-list-item title="Naimul Arefin" subtitle="Vice-President"></buetps-list-item>
+    <buetps-list-item title="Shoumik Saha" subtitle="General Secretary"></buetps-list-item>
+    <buetps-list-item title="Adib Rahman" subtitle="Joint Secretary"></buetps-list-item>
+    <buetps-list-item title="Snigdha Shiuly" subtitle="Joint Secretary"></buetps-list-item>
+    <buetps-list-item title="Nafisa Mehtaj" subtitle="Joint Secretary"></buetps-list-item>
+    <buetps-list-item title="Zulkernain Haider Arnob" subtitle="Organizing Secretary"></buetps-list-item>
+    <buetps-list-item title="Zaki Alam Pushan" subtitle="Assistant General Seceraty - Promotion"></buetps-list-item>
+    <buetps-list-item title="Anannya Tahsin" subtitle="Assistant General Seceraty - Publication"></buetps-list-item>
+    <buetps-list-item title="Rahat Chowdhury" subtitle="Exhibition Secretary"></buetps-list-item>
+    <buetps-list-item title="Faizur Himel" subtitle="Office Secretary"></buetps-list-item>
+    <buetps-list-item title="Yousran Auritra" subtitle="Treasurer"></buetps-list-item>
+
+    <buetps-list-item title="Abs Rimon" subtitle="Executive Member"></buetps-list-item>
+    <buetps-list-item title="Mostazer Billah" subtitle="Executive Member"></buetps-list-item>
+    <buetps-list-item title="Roufat Nahin Priota" subtitle="Executive Member"></buetps-list-item>
+    <buetps-list-item title="Shakti Banik" subtitle="Executive Member"></buetps-list-item>
+    <buetps-list-item title="Mahmud Mahim" subtitle="Executive Member"></buetps-list-item>
+    <buetps-list-item title="Sakib Hasnat" subtitle="Executive Member"></buetps-list-item>
+    <buetps-list-item title="Joydip Paul" subtitle="Executive Member"></buetps-list-item>
+    <buetps-list-item title="Asif Muktadir" subtitle="Executive Member"></buetps-list-item>
 </v-list>
 `;
 
 
 var component = {
     template: `
-    <general-page title="Batch '11" subtitle="Executive Committee" color="#3a8e77">
+    <general-page title="Batch '15" subtitle="Executive Committee" color="#3a8e77">
         <general-page-content index=0>${page1}</general-page-content>
     </general-page>
     `
