@@ -30,8 +30,8 @@ var page1 = `
 
 var component = {
     template: `
-    <general-page title="Batch '14" subtitle="Executive Committee" color="#3a8e77">
-        <general-page-content index=0>${page1}</general-page-content>
+    <general-page>
+        <general-page-content index=0 title="Batch '14" subtitle="Executive Committee" color="#3a8e77">${page1}</general-page-content>
     </general-page>
     `
 };

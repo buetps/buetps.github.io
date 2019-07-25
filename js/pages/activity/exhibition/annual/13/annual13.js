@@ -16,8 +16,8 @@ var page1 = `
 
 var component = {
     template: `
-    <general-page title="13th Annual Exhibition" color="#169e78">
-        <general-page-content index=0>${page1}</general-page-content>
+    <general-page>
+        <general-page-content index=0 title="13th Annual Exhibition" color="#169e78">${page1}</general-page-content>
     </general-page>
     `
 };

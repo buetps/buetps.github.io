@@ -22,8 +22,8 @@ var page1 = `
 
 var component = {
     template: `
-    <general-page title="Portraiture" subtitle="Voyage of Visuals" color="#ffea00">
-        <general-page-content index=0>${page1}</general-page-content>
+    <general-page>
+        <general-page-content index=0 title="Portraiture" subtitle="Voyage of Visuals" color="#ffea00">${page1}</general-page-content>
     </general-page>
     `
 };

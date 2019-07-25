@@ -23,8 +23,8 @@ var page1 =  `
 
 var component = {
     template: `
-    <general-page title="Beyond: Celebrating 20 Years of BUETPS" color="#3f5388">
-        <general-page-content index=0>${page1}</general-page-content>
+    <general-page>
+        <general-page-content index=0 title="Beyond: Celebrating 20 Years of BUETPS" color="#3f5388">${page1}</general-page-content>
     </general-page>
     `
 };

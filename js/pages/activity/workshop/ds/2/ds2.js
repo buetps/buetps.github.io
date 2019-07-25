@@ -53,8 +53,8 @@ var page1 = `
 
 var component = {
     template: `
-    <general-page title="Discovering Streets 2" subtitle="An Advanced Street Photography Workshop" color="#3a8e77">
-        <general-page-content index=0>${page1}</general-page-content>
+    <general-page>
+        <general-page-content index=0 title="Discovering Streets 2" subtitle="An Advanced Street Photography Workshop" color="#3a8e77">${page1}</general-page-content>
     </general-page>
     `
 };

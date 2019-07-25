@@ -89,9 +89,9 @@ var page1 = `
 
 var component = {
   template: `
-  <general-page title="11th Annual Exhibition" color="#FF0000">
-    <general-page-content index=0>${page1}</general-page-content>
-    <general-page-content index=1>${page2}</general-page-content>
+  <general-page>
+    <general-page-content index=0 title="11th Annual Exhibition" color="#FF0000">${page1}</general-page-content>
+    <general-page-content index=1 title="11th Annual Exhibition" color="#FF0000">${page2}</general-page-content>
   </general-page>`
 };
 

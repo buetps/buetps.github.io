@@ -38,8 +38,8 @@ yet got a chance to get acquainted officially. </p>
 
 var component = {
     template: `
-    <general-page title="Season 3" subtitle="Loop" color="#FF0000">
-        <general-page-content index=0>${page1}</general-page-content>
+    <general-page>
+        <general-page-content index=0 title="Season 3" subtitle="Loop" color="#FF0000">${page1}</general-page-content>
     </general-page>
     `
 };

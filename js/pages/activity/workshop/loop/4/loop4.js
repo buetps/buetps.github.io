@@ -17,8 +17,8 @@ var page1 = `
 
 var component = {
     template: `
-    <general-page title="Season 4" subtitle="Loop" color="#F5F5F5">
-        <general-page-content index=0>${page1}</general-page-content>
+    <general-page>
+        <general-page-content index=0 title="Season 4" subtitle="Loop" color="#F5F5F5">${page1}</general-page-content>
     </general-page>
     `
 };

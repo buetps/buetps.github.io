@@ -142,9 +142,9 @@ var page2= `
 
 var component = {
     template: `
-    <general-page title="Discovering Streets" subtitle="A 3 DAY LONG WORKSHOP & EXHIBITION BY BUETPS" color="#000000">
-        <general-page-content index=0>${page1}</general-page-content>
-        <general-page-content index=1>${page2}</general-page-content>
+    <general-page>
+        <general-page-content index=0 title="Discovering Streets" subtitle="A 3 DAY LONG WORKSHOP & EXHIBITION BY BUETPS" color="#000000">${page1}</general-page-content>
+        <general-page-content index=1 title="Discovering Streets" subtitle="A 3 DAY LONG WORKSHOP & EXHIBITION BY BUETPS" color="#000000">${page2}</general-page-content>
     </general-page>
     `
 };

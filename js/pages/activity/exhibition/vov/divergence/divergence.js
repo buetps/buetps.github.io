@@ -20,8 +20,8 @@ that no one has ever done before.</p>
 
 var component = {
     template: `
-    <general-page title="Divergence" subtitle="Voyage of Visuals" color="#841b18">
-        <general-page-content index=0>${page1}</general-page-content>
+    <general-page>
+        <general-page-content index=0 title="Divergence" subtitle="Voyage of Visuals" color="#841b18">${page1}</general-page-content>
     </general-page>
     `
 };
