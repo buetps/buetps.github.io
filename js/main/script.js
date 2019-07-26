@@ -2,7 +2,6 @@ Vue.config.devtools = true;
 
 Vue.use(VueTreeNavigation);
 
-
 var website = {
     template: `<buetps></buetps>`
 };
@@ -17,5 +16,6 @@ const app = new Vue({
     store,
     render: function(createElement) {
         return createElement(website);
-    }
+    },
+    vuetify: new Vuetify(),
 }).$mount('#vue-entry');

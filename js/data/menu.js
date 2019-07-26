@@ -46,6 +46,7 @@ const menu = [
             {name: "Naser Imran Hossain", path: "nih"},
             {name: "Aneek Mustafa Anwar", path: "shojaru"},
             {name: "Javed Miandad", path: "javed"},
+            {name: "Dhrubo Paul", path: "dhrubo"},
         ]
     },
     {name: "About", path: "/about"},

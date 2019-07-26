@@ -56,7 +56,6 @@ var page2 = `
 
 
 var page1 = `
-    <v-img src="/images/logo.svg"></v-img>
     <p>BUETPS is proud to present its most prized event, 11th Annual Exhibition.</p>
         
     <p>On campus festival will be inaugurated on the 14th of November, 2015 at BUET campus. 

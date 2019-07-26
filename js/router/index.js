@@ -58,6 +58,7 @@ import people from "/js/pages/people/people.js";
 import nih from "/js/pages/people/05_naser/nih.js";
 import shojaru from "/js/pages/people/07_aneek/aneek.js";
 import javed from "/js/pages/people/09_javed/javed.js";
+import dhrubo from "/js/pages/people/11_dhrubo/dhrubo.js";
 
 
 
@@ -120,9 +121,10 @@ const routes = [
     {path: '/activity/workshop/ds/1', component: ds1},
 
     {path: '/people', component: people},
-    {path: '/people/nih', component: nih},
+    {path: '/people/nih/:page?/:photo?', component: nih, props: true},
     {path: '/people/shojaru', component: shojaru},
     {path: '/people/javed', component: javed},
+    {path: '/people/dhrubo/:page?/:photo?', component: dhrubo, props: true},
 ];
 
 

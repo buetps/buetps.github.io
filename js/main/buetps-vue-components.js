@@ -3,7 +3,6 @@ import menuItems from "/js/data/menu.js";
 Vue.component("buetps", {
     template: `
         <v-app>
-            <!-- stateless floating light app temporary -->
             <v-navigation-drawer fixed touchless right stateless :disable-route-watcher=true :disable-resize-watcher="true" value="true" v-model="isNavOn" width=350>
                 <v-layout align-center justify-space-between row>
                     <router-link to="/"><img class=logo src="images/logo.svg"></img></router-link>   
@@ -11,19 +10,20 @@ Vue.component("buetps", {
                 </v-layout>
                 <vue-tree-navigation :items="menuItems"/>
             </v-navigation-drawer>
-
-            <v-btn absolute fab depressed light top right :fixed="this.isNavOn" color="white" style="top:16px !important; padding:4px;" @click.stop="toggleNav"><v-icon>menu</v-icon></v-btn>
-
+            
+            <v-btn absolute fab depressed light top right :fixed="this.isNavOn" color="white" style="top:16px !important; padding:4px;z-index:100" @click.stop="toggleNav">
+                <v-icon>menu</v-icon>
+            </v-btn>
+            
             <v-content>
-                <v-container fill-width style="padding-top:0px !important">
+                <div style="padding:0px !important;margin:0px !important">
                     <v-layout justify-center align-center>
                         <transition name="fade" mode="out-in">
                             <router-view></router-view>
                         </transition>
                     </v-layout>
-                </v-container>
+                </div>
             </v-content>
-
         </v-app>
     `,
     data: function(){
@@ -90,6 +90,59 @@ Vue.component('buetps-list', {
     `
 });
 
+Vue.component("gallery-item", {
+    template: `
+    <v-carousel-item>
+        <v-layout align-center justify-center>
+            <v-img :src="this.src"></v-img>
+        </v-layout>
+    </v-carousel-item>
+    `,
+    props: ['src']
+});
+
+Vue.component("gallery", {
+    template: `
+        <v-window-item :value="this.$attrs.index" :key="this.$attrs.index" class=gallery>
+            <div class="gallery-page-head">
+                <div class="gallery-subtitle">{{this.subtitle}}</div>
+                <div>
+                    <span class="gallery-title">{{this.title}}</span>
+                    <a v-if="this.description" class="gallery-description" @click="isDescription=true">description</a>
+                </div>
+            </div>
+
+            <v-overlay :value="isDescription" opacity=1 z-index=101 color="white">
+                <div style="width:90vw;height:80vh;color:#222222 !important;">
+                    <div v-html="description" style="margin:5vh 5vw 5vh 5vw;padding:5vw;height:70vh;overflow-y: auto"></div>
+                    <div style="text-align:center"><a @click="isDescription = false">close</a></div>
+                </div>
+            </v-overlay>
+
+            <v-card-text class="gallery-page-content">
+                <v-carousel hide-delimiters :continuous="false" :cycle="false" light prev-icon="chevron-left" next-icon="chevron-right" height="70vh" v-model=this.photo>
+                    <slot></slot>
+                </v-carousel>
+            </v-card-text>
+
+        </v-window-item>
+    `,
+    props: ['index', 'title', 'subtitle', 'description'],
+    data() {
+        return {
+            photo: undefined,
+            isDescription: false
+        }
+    },
+    mounted() {
+        var integerPhoto = 0;
+        if (!isNaN(this.$route.params.photo)){
+            integerPhoto = parseInt(this.$route.params.photo);
+        }
+        this.photo = integerPhoto;
+    }
+});
+
 
 Vue.component("general-page-content", {
     template: `
@@ -109,16 +162,12 @@ Vue.component("general-page-content", {
     `,
     props: ['index', 'title', 'subtitle', 'color']
 });
-
-
-
-
 Vue.component("general-page", {
     template:`
     <v-card class="mx-auto" width=100vw min-height=100vh flat>
         
         
-        <v-window v-model="step">
+        <v-window v-model="step" touchless>
             <slot></slot>
         </v-window>
 
@@ -146,10 +195,18 @@ Vue.component("general-page", {
             this.windowItemCount = document.getElementsByClassName("v-window__container")[0].children.length;
         },
         loadPageByStep: function(step){
-            this.step = step;
+            var integerStep = 0;
+            if (!isNaN(step)){
+                integerStep = parseInt(step);
+            }
+            this.step = integerStep;
+        },
+        loadAppropriatePage : function(){
+            this.loadPageByStep(this.$route.params.page || 0);
         }
     },
     mounted(){
+        /*
         this._keyListener = function(e) {
             switch(e.keyCode) {
                 case 37:
@@ -159,14 +216,16 @@ Vue.component("general-page", {
             }
         };
         document.addEventListener('keydown', this._keyListener.bind(this));
-
-        this.loadPageByStep(0);
+        */
+        
         this.determineWindowItemCount();
-
+        this.loadAppropriatePage();
         
     },
     beforeDestroy() {
+        /*
         document.removeEventListener('keydown', this._keyListener);
+        */
     }
     
 });

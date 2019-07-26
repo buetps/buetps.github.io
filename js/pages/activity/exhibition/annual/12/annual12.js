@@ -1,4 +1,5 @@
 var page1 =  `
+    <div class="logo-inside"><img src='/js/pages/activity/exhibition/annual/12/beyond.svg'></img></div>
     <p>BUETPS is delighted to announce that the exhibition for Beyond: Celebrating 20 Years of BUETPS is going to take place on 
     6th to 8th October at the outdoor venues around BUET Campus.</p>
 
