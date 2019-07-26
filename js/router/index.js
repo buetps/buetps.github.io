@@ -67,23 +67,22 @@ import dhrubo from "/js/pages/people/11_dhrubo/dhrubo.js";
 
 const routes = [
     {path: '/', component: home},
-    {path: '/home/:page?', component: home, redirect: '/'},
-    {path: '/about/:page?', component: about},
-    {path: '/notice/:page?', component: notice},
+    {path: '/home/', component: home, redirect: '/'},
+    {path: '/about/', component: about},
+    {path: '/notice/', component: notice},
 
-    {path: '/committee/:page?', component: committee},
-    {path: '/committee/15/:page?', component: committee15},
-    {path: '/committee/14/:page?', component: committee14},
-    {path: '/committee/13/:page?', component: committee13},
-    {path: '/committee/12/:page?', component: committee12},
-    {path: '/committee/11/:page?', component: committee11},
-    {path: '/committee/10/:page?', component: committee10},
-    {path: '/committee/09/:page?', component: committee09},
-    {path: '/committee/08/:page?', component: committee08},
-    {path: '/committee/07/:page?', component: committee07},
-    {path: '/committee/06/:page?', component: committee06},
-    {path: '/committee/05/:page?', component: committee05},
-
+    {path: '/committee/', component: committee},
+    {path: '/committee/15/', component: committee15},
+    {path: '/committee/14/', component: committee14},
+    {path: '/committee/13/', component: committee13},
+    {path: '/committee/12/', component: committee12},
+    {path: '/committee/11/', component: committee11},
+    {path: '/committee/10/', component: committee10},
+    {path: '/committee/09/', component: committee09},
+    {path: '/committee/08/', component: committee08},
+    {path: '/committee/07/', component: committee07},
+    {path: '/committee/06/', component: committee06},
+    {path: '/committee/05/', component: committee05},
 
     {path: '/activity/:page?', component: activity},
 

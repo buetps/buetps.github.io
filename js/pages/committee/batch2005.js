@@ -1,5 +1,5 @@
 var page1 = `
-<v-list two-line>
+<v-list>
     <buetps-list-item title="Naser Imran Hossain" subtitle="President"></buetps-list-item>
     <buetps-list-item title="Ananya Rubayat" subtitle="Vice-President"></buetps-list-item>
     <buetps-list-item title="Fahim Hossain" subtitle="General Secretary"></buetps-list-item>

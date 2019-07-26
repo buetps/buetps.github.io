@@ -73,12 +73,12 @@ Vue.component("buetps", {
 
 Vue.component('buetps-list-item', {
     template: `
-    <v-list-tile>
-        <v-list-tile-content>
-            <v-list-tile-title>{{this.title}}</v-list-tile-title>
-            <v-list-tile-sub-title>{{this.subtitle}}</v-list-tile-sub-title>
-        </v-list-tile-content>
-    </v-list-tile>
+    <v-list-item two-line>
+        <v-list-item-content>
+            <v-list-item-title>{{this.title}}</v-list-item-title>
+            <v-list-item-sub-title>{{this.subtitle}}</v-list-item-sub-title>
+        </v-list-item-content>
+    </v-list-item>
     `,
     props: ['title', 'subtitle'],
 });
