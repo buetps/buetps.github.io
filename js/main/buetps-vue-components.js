@@ -94,7 +94,13 @@ Vue.component("gallery-item", {
     template: `
     <v-carousel-item>
         <v-layout align-center justify-center>
-            <v-img :src="this.src"></v-img>
+            <v-img :src="this.src">
+            <template v-slot:placeholder>
+                <v-layout fill-height align-center justify-center ma-0>
+                    <v-progress-circular indeterminate color="grey lighten-5"></v-progress-circular>
+                </v-layout>
+          </template>
+            </v-img>
         </v-layout>
     </v-carousel-item>
     `,
