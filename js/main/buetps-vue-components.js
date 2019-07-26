@@ -172,8 +172,8 @@ Vue.component("general-page", {
         </v-window>
 
         <div v-if="this.windowItemCount>1" style="position:fixed;right:5vw;bottom:5vh;">
-            <v-btn icon :disabled="step == 0" @click="step--"><v-icon>chevron_left</v-icon></v-btn>
-            <v-btn icon :disabled="step == this.windowItemCount-1" @click="step++"><v-icon>chevron_right</v-icon></v-btn>
+            <v-btn icon :disabled="step == 0" @click="goPrevious"><v-icon>chevron_left</v-icon></v-btn>
+            <v-btn icon :disabled="step == this.windowItemCount-1" @click="goNext"><v-icon>chevron_right</v-icon></v-btn>
         </div>
 
     </v-card>
@@ -186,10 +186,10 @@ Vue.component("general-page", {
     },
     methods: {
         goNext() {
-            this.step = this.step < this.windowItemCount-1 ? this.step+1 : this.step;
+            this.step = this.step < this.windowItemCount-1 ? this.step+1 : this.step; this.updateURL();
         },
         goPrevious() {
-            this.step = this.step > 0 ? this.step-1 : this.step;
+            this.step = this.step > 0 ? this.step-1 : this.step; this.updateURL();
         },
         determineWindowItemCount: function(){
             this.windowItemCount = document.getElementsByClassName("v-window__container")[0].children.length;
@@ -197,35 +197,41 @@ Vue.component("general-page", {
         loadPageByStep: function(step){
             var integerStep = 0;
             if (!isNaN(step)){
-                integerStep = parseInt(step);
+                integerStep = parseInt(step) < this.windowItemCount ? parseInt(step) : 0;
             }
             this.step = integerStep;
         },
         loadAppropriatePage : function(){
             this.loadPageByStep(this.$route.params.page || 0);
+        },
+        updateURL() {
+            var path = "/" + this.$route.path.split("/").splice(1,2).join("/") + "/" + this.step;
+            this.$router.push({path});
         }
     },
     mounted(){
-        /*
+        
         this._keyListener = function(e) {
-            switch(e.keyCode) {
-                case 37:
-                    e.preventDefault(); this.goPrevious(); break;
-                case 39:
-                    e.preventDefault(); this.goNext(); break;
+            if(e.ctrlKey){
+                switch(e.keyCode) {
+                    case 37:
+                        e.preventDefault(); this.goPrevious(); break;
+                    case 39:
+                        e.preventDefault(); this.goNext(); break;
+                }
             }
         };
         document.addEventListener('keydown', this._keyListener.bind(this));
-        */
+        
         
         this.determineWindowItemCount();
         this.loadAppropriatePage();
         
     },
     beforeDestroy() {
-        /*
+        
         document.removeEventListener('keydown', this._keyListener);
-        */
+        
     }
     
 });

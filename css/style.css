@@ -87,11 +87,13 @@
 } .gallery-page-head .gallery-subtitle {
   font-family: buetps-bebas !important;
   font-size: 2vh;
+  margin-bottom: -.2cm;
 } .gallery-page-head .gallery-description {
   color: #55555555 !important;
 }
 .gallery-page-content {
   padding: 5vh 5vw 5vh 5vw;
+  margin-top: 2vh 0 2vh 0;
 }
 .v-carousel {
   box-shadow: none !important;
@@ -117,9 +119,9 @@
   }
 
   .gallery-page-head .gallery-title {
-    font-size: 4vw;
+    font-size: .7cm;
   } .gallery-page-head .gallery-subtitle {
-    font-size: 2vw;
+    font-size: .4cm;
   }
 }
 
