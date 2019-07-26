@@ -79,7 +79,7 @@ var page2 = `
 
 var component = {
     template: `
-    <general-page>
+    <general-page level=4>
         <general-page-content index=0 title="Season 2" subtitle="Photography Quintessentials" color="#3a8e77">${page1}</general-page-content>
         <general-page-content index=1 title="Season 2" subtitle="Photography Quintessentials" color="#3a8e77">${page2}</general-page-content>
     </general-page>

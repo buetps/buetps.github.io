@@ -184,6 +184,7 @@ Vue.component("general-page", {
 
     </v-card>
     `,
+    prop: ['level'],
     data: function(){
         return {
             step: undefined,
@@ -211,8 +212,11 @@ Vue.component("general-page", {
             this.loadPageByStep(this.$route.params.page || 0);
         },
         updateURL() {
-            var path = "/" + this.$route.path.split("/").splice(1,2).join("/") + "/" + this.step;
-            this.$router.push({path});
+            var level = this.$attrs.level;
+            if(level && !isNaN(level)){
+                var path = "/" + this.$route.path.split("/").splice(1,parseInt(level)).join("/") + "/" + this.step;
+                this.$router.push({path});
+            }
         }
     },
     mounted(){

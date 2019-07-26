@@ -24,7 +24,7 @@ var component = {
         }
     },
     template: `
-    <general-page>
+    <general-page level=2>
         <general-page-content index=0 :title="this.profile.name" color="#FF0000">${page1}</general-page-content>
         <gallery index=1 title="The Last Day" :subtitle="this.profile.name" :description="lastday.description">${lastday.template}</gallery>
         <gallery index=2 title="Neelakurinji" :subtitle="this.profile.name" :description="neelakurinji.description">${neelakurinji.template}</gallery>
