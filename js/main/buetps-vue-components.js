@@ -4,9 +4,8 @@ Vue.component("buetps", {
     template: `
         <v-app>
             <v-navigation-drawer fixed touchless right stateless :disable-route-watcher=true :disable-resize-watcher="true" value="true" v-model="isNavOn" width=350>
-                <v-layout align-center justify-space-between row>
+                <v-layout align-center justify-space-between>
                     <router-link to="/"><img class=logo src="images/logo.svg"></img></router-link>   
-                    <!--<v-btn flat fab @click.stop="setNavFalse"><v-icon>close</v-icon></v-btn>-->
                 </v-layout>
                 <vue-tree-navigation :items="menuItems"/>
             </v-navigation-drawer>
@@ -14,7 +13,7 @@ Vue.component("buetps", {
             <v-btn absolute fab depressed light top right :fixed="this.isNavOn" color="white" style="top:16px !important; padding:4px;z-index:100" @click.stop="toggleNav">
                 <v-icon>menu</v-icon>
             </v-btn>
-            
+
             <v-content>
                 <div style="padding:0px !important;margin:0px !important">
                     <v-layout justify-center align-center>
@@ -64,11 +63,21 @@ Vue.component("buetps", {
             }
         };
         document.addEventListener('keydown', this._keyListener.bind(this));
+
+        this.clickListener = function(event){
+            var isNavOn = this.$store.getters.getNavFlag;
+            if(isNavOn) {
+                this.$store.commit('setNav', false);
+            }
+        }
+
+        document.getElementsByTagName("main")[0].onclick = this.clickListener.bind(this);
     },
     beforeDestroy() {
         document.removeEventListener('keydown', this._keyListener);
     }
 });
+
 
 
 Vue.component('buetps-list-item', {
@@ -95,7 +104,7 @@ Vue.component('album', {
     template: `
     <v-layout align-center justify-center column>
         <v-window v-model="photoID">
-            <v-window-item v-for="(src,index) in this.srcList" :key="index">
+            <v-window-item v-for="(src,index) in this.srcList" :key="index" transition="fade-transition" reverse-transition="fade-transition">
                 <v-card max-height="65vh" width="60vw" flat>
                     <div class="photo" :style="'background-image: url(' + src + ')'"></div>
                 </v-card>
