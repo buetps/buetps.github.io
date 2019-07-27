@@ -73,7 +73,7 @@
   margin-bottom:-3vh;
 }
 .buetps-page-content {
-  margin: 2cm 15vw 2cm 15vw;
+  margin: 2cm 15vw 1cm 15vw;
 }
 
 .gallery-page-head {
@@ -83,26 +83,20 @@
   padding: 3vh 20vw 2vh 5vw;
 } .gallery-page-head .gallery-title {
   font-family: buetps-bebas !important;
-  font-size: 4vh;
+  font-size: 1cm;
 } .gallery-page-head .gallery-subtitle {
   font-family: buetps-bebas !important;
-  font-size: 2vh;
-  margin-bottom: -.2cm;
+  font-size: .5cm;
+  margin-bottom: -.3cm;
+  color: #555555DD !important;
 } .gallery-page-head .gallery-description {
-  color: #55555555 !important;
+  color: #555555DD !important;
+  text-decoration-line: underline;
+  padding-left: .2cm;
 }
 .gallery-page-content {
   padding: 5vh 5vw 5vh 5vw;
-  margin-top: 2vh 0 2vh 0;
-}
-.v-carousel {
-  box-shadow: none !important;
-}
-.v-responsive {
-  position: static !important;
-}
-.v-image__image--cover {
-  background-size: contain;
+  margin: 2vh 0 2vh 0;
 }
 
 
@@ -117,14 +111,13 @@
   .buetps-page-content {
     margin: 5vh 10vw 10vh 10vw;  
   }
-
-  .gallery-page-head .gallery-title {
-    font-size: .7cm;
-  } .gallery-page-head .gallery-subtitle {
-    font-size: .4cm;
-  }
 }
 
+@media (max-height: 450px) {
+  .gallery-page-head {
+    display: none;
+  }
+}
 
 
 .logo-inside {
@@ -134,3 +127,18 @@
 } .logo-inside img {
   max-height: 5vh;
 }
+
+.photo {
+  width: 100%; 
+  height: 60vh; 
+  background-repeat: no-repeat; 
+  background-size: contain;
+  background-position: center center;
+}
+.photo-placeholder{
+  width: 1cm; 
+  height: 1cm; 
+  background-color: #545454;
+}
+
+

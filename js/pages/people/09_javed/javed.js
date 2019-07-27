@@ -1,9 +1,7 @@
 var component = {
-    template: `
-    <div>
-        <h1>BUET Photographic Society</h1>
-    </div>
-    `
+ template: `
+ <div></div>
+ `
 };
 
 export default component;

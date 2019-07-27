@@ -90,50 +90,108 @@ Vue.component('buetps-list', {
     `
 });
 
-Vue.component("gallery-item", {
+
+Vue.component('album', {
     template: `
-    <v-carousel-item>
-        <v-layout align-center justify-center>
-            <v-img :src="this.src">
-            <template v-slot:placeholder>
-                <v-layout fill-height align-center justify-center ma-0>
-                    <v-progress-circular indeterminate color="grey lighten-5"></v-progress-circular>
-                </v-layout>
-          </template>
-            </v-img>
-        </v-layout>
-    </v-carousel-item>
+    <v-layout align-center justify-center column>
+        <v-window v-model="photoID">
+            <v-window-item v-for="(src,index) in this.srcList" :key="index">
+                <v-card max-height="65vh" width="60vw" flat>
+                    <div class="photo" :style="'background-image: url(' + src + ')'"></div>
+                </v-card>
+            </v-window-item>
+        </v-window>
+        <div style="top: 50%;transform: translateY(-50%); position:fixed;display:flex;width: 90vw;justify-content: space-between;">
+            <v-btn icon :disabled="this.isFirst()" @click="goPrevious"><v-icon>chevron_left</v-icon></v-btn>
+            <v-btn icon :disabled="this.isLast()" @click="goNext"><v-icon>chevron_right</v-icon></v-btn>
+        </div>
+    </v-layout>
     `,
-    props: ['src']
+    data : function() {
+        return {
+            photoID: 0,
+        }
+    },
+    props: ['srcList'],
+    methods: {
+        isLast() {
+            return this.photoID == this.srcList.length - 1;
+        },
+        isFirst() {
+            return this.photoID == 0;
+        },
+        goNext() {
+            this.photoID = this.isLast() ? this.photoID : this.photoID + 1; this.updateURL();
+        },
+        goPrevious() {
+            this.photoID = this.isFirst() ? this.photoID : this.photoID - 1; this.updateURL();
+        },
+        loadPhotoByPhotoID: function(photoID){
+            var integerPhotoID = 0;
+            if (!isNaN(photoID)){
+                integerPhotoID = parseInt(photoID) < this.srcList.length ? parseInt(photoID) : 0;
+            }
+            this.photoID = integerPhotoID;
+        },
+        loadAppropriatePhoto : function(){
+            this.loadPhotoByPhotoID(this.$route.params.photo || 0);
+        },
+        updateURL() {
+
+        },
+        copyLink() {
+            var textArea = document.createElement("textarea");
+            textArea.value = this.$route.path;
+            document.body.appendChild(textArea);
+            textArea.focus();
+            textArea.select();
+            document.execCommand('copy');
+            document.body.removeChild(textArea);
+        }
+          
+    },
+    mounted(){
+        this._keyListener = function(e) {
+            switch(e.keyCode) {
+                case 37: e.preventDefault(); this.goPrevious(); break;
+                case 39: e.preventDefault(); this.goNext(); break;
+            }
+        };
+        document.addEventListener('keydown', this._keyListener.bind(this));
+        
+        this.loadAppropriatePhoto();
+    },
+    beforeDestroy() {
+        document.removeEventListener('keydown', this._keyListener);
+    }
 });
+
 
 Vue.component("gallery", {
     template: `
         <v-window-item :value="this.$attrs.index" :key="this.$attrs.index" class=gallery>
             <div class="gallery-page-head">
-                <div class="gallery-subtitle">{{this.subtitle}}</div>
+                <div class="gallery-subtitle">{{this.album.subtitle}}</div>
                 <div>
-                    <span class="gallery-title">{{this.title}}</span>
-                    <a v-if="this.description" class="gallery-description" @click="isDescription=true">description</a>
+                    <span class="gallery-title">{{this.album.title}}</span>
+                    <a v-if="this.album.description" class="gallery-description" @click="isDescription=true">description</a>
                 </div>
             </div>
 
             <v-overlay :value="isDescription" opacity=1 z-index=101 color="white">
                 <div style="width:90vw;height:80vh;color:#222222 !important;">
-                    <div v-html="description" style="margin:5vh 5vw 5vh 5vw;padding:5vw;height:70vh;overflow-y: auto"></div>
+                    <div v-html="album.description" style="margin:5vh 5vw 5vh 5vw;padding:0vh 5vw 0vh 5vw;height:70vh;overflow-y: auto"></div>
                     <div style="text-align:center"><a @click="isDescription = false">close</a></div>
                 </div>
             </v-overlay>
 
             <v-card-text class="gallery-page-content">
-                <v-carousel hide-delimiters :continuous="false" :cycle="false" light prev-icon="chevron-left" next-icon="chevron-right" height="70vh" v-model=this.photo>
-                    <slot></slot>
-                </v-carousel>
+                <album :srcList="this.album.src"></album>
             </v-card-text>
 
         </v-window-item>
     `,
-    props: ['index', 'title', 'subtitle', 'description'],
+    props: ['index', 'album'],
     data() {
         return {
             photo: undefined,

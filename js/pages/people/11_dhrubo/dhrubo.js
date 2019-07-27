@@ -9,9 +9,8 @@ import lastday from '/js/pages/people/11_dhrubo/lastday/index.js';
 import neelakurinji from '/js/pages/people/11_dhrubo/neelakurinji/index.js';
 
 var page1 = `
-<div>
-    test
-</div>
+<div></div>
+
 `
 
 
@@ -26,8 +25,8 @@ var component = {
     template: `
     <general-page level=2>
         <general-page-content index=0 :title="this.profile.name" color="#FF0000">${page1}</general-page-content>
-        <gallery index=1 title="The Last Day" :subtitle="this.profile.name" :description="lastday.description">${lastday.template}</gallery>
-        <gallery index=2 title="Neelakurinji" :subtitle="this.profile.name" :description="neelakurinji.description">${neelakurinji.template}</gallery>
+        <gallery index=1 :album=lastday></gallery>
+        <gallery index=2 :album=neelakurinji></gallery>
     </general-page>`
 };
 

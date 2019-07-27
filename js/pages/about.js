@@ -4,7 +4,7 @@ var component = {
         <h1>About</h1>
         
         <v-btn flat @click="reset">Reset the Application</v-btn>
-        
+        <v-footer fixed color="white"><v-spacer></v-spacer><span>created and maintained by <b>Dhrubo Paul</b></span></v-footer>
 
     </div>
     `,

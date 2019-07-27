@@ -1,4 +1,6 @@
 const neelakurinji = {
+    title: "Neelakurinji",
+    subtitle: "Dhrubo Paul",
     description : `
         <p>It was a magical cave and I got lost, maybe for a minute
         there, and came out, only to see that fifty years had passed.</p>
@@ -54,17 +56,17 @@ const neelakurinji = {
         been only a blink of an eye and Cronus keeps you alive just enough so that when
         someone asks, you can lie, saying you are still there.</p>
         `,
-    template: `
-        <gallery-item src="/js/pages/people/11_dhrubo/neelakurinji/1.jpg"></gallery-item>
-        <gallery-item src="/js/pages/people/11_dhrubo/neelakurinji/2.jpg"></gallery-item>
-        <gallery-item src="/js/pages/people/11_dhrubo/neelakurinji/3.jpg"></gallery-item>
-        <gallery-item src="/js/pages/people/11_dhrubo/neelakurinji/4.jpg"></gallery-item>
-        <gallery-item src="/js/pages/people/11_dhrubo/neelakurinji/5.jpg"></gallery-item>
-        <gallery-item src="/js/pages/people/11_dhrubo/neelakurinji/6.jpg"></gallery-item>
-        <gallery-item src="/js/pages/people/11_dhrubo/neelakurinji/7.jpg"></gallery-item>
-        <gallery-item src="/js/pages/people/11_dhrubo/neelakurinji/8.jpg"></gallery-item>
-        <gallery-item src="/js/pages/people/11_dhrubo/neelakurinji/9.jpg"></gallery-item>
-    `
+    src: [
+        "/js/pages/people/11_dhrubo/neelakurinji/1.jpg",
+        "/js/pages/people/11_dhrubo/neelakurinji/2.jpg",
+        "/js/pages/people/11_dhrubo/neelakurinji/3.jpg",
+        "/js/pages/people/11_dhrubo/neelakurinji/4.jpg",
+        "/js/pages/people/11_dhrubo/neelakurinji/5.jpg",
+        "/js/pages/people/11_dhrubo/neelakurinji/6.jpg",
+        "/js/pages/people/11_dhrubo/neelakurinji/7.jpg",
+        "/js/pages/people/11_dhrubo/neelakurinji/8.jpg",
+        "/js/pages/people/11_dhrubo/neelakurinji/9.jpg",
+    ]
 };
 
 export default neelakurinji;

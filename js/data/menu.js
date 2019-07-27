@@ -7,10 +7,10 @@ const menu = [
                 children: [
                     {name: "Annual Exhibition", path: "annual",
                         children: [
-                            {name: "13th Annual", path: "13"},
-                            {name: "12th Annual: Beyond", path: "12"},
-                            {name: "11th Annual", path: "11"},
-                            {name: "10th Annual", path: "10"},
+                            {name: "13th Annual", path: "thirteen"},
+                            {name: "12th Annual: Beyond", path: "twelve"},
+                            {name: "11th Annual", path: "eleven"},
+                            {name: "10th Annual", path: "ten"},
                         ]
                     },
                     {name: "Voyage of Visuals", path: "vov",
@@ -27,28 +27,21 @@ const menu = [
                     {name: "Loop", path: "loop"},
                     {name: "Photography Quintessentials", path: "quintessentials",
                         children: [
-                            {name: "Season 1", path: "1"},
-                            {name: "Season 2", path: "2"},
+                            {name: "Season 1", path: "one"},
+                            {name: "Season 2", path: "two"},
                         ]
                     },
                     {name: "Discovering Streets", path: "ds",
                         children: [
-                            {name: "Season 1", path: "1"},
-                            {name: "Season 2", path: "2"},
+                            {name: "Season 1", path: "one"},
+                            {name: "Season 2", path: "two"},
                         ]
                     },
                 ]
             }
         ]
     },
-    {name: "People", path: "/people",
-        children: [
-            {name: "Naser Imran Hossain", path: "nih"},
-            {name: "Aneek Mustafa Anwar", path: "shojaru"},
-            {name: "Javed Miandad", path: "javed"},
-            {name: "Dhrubo Paul", path: "dhrubo"},
-        ]
-    },
+    {name: "People", path: "/people"},
     {name: "About", path: "/about"},
 ];
 
