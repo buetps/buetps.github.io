@@ -6,6 +6,12 @@ var data = [
         batch: "'05"
     },
     {
+        id: "05_ananya",
+        url: "dm",
+        name: "Ananya Rubayet",
+        batch: "'05"
+    },
+    {
         id: "06_fahim",
         url: "fahim",
         name: "Fahim Hossain",

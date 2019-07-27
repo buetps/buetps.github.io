@@ -1,4 +1,5 @@
 var page1 = `
+<div class=logo-inside><img src="/js/pages/activity/workshop/ds/1/ds1.svg"></img></div>
 <p>On February 23rd, 2015 BUET Photographic Society announced its newest endeavour, a 3 day long street photography workshop 
 which was supposed to be followed by an on campus exhibition. </p>
 
@@ -142,7 +143,7 @@ var page2= `
 
 var component = {
     template: `
-    <general-page>
+    <general-page level=4>
         <general-page-content index=0 title="Discovering Streets" subtitle="A 3 DAY LONG WORKSHOP & EXHIBITION BY BUETPS" color="#000000">${page1}</general-page-content>
         <general-page-content index=1 title="Discovering Streets" subtitle="A 3 DAY LONG WORKSHOP & EXHIBITION BY BUETPS" color="#000000">${page2}</general-page-content>
     </general-page>
