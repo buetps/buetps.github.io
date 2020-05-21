@@ -31,7 +31,7 @@ const data =
             },
             {
                 id: "singles2",
-                name: "Singles",
+                name: "Singles 2",
                 description: [
                     "Description",
                     "Description 2"

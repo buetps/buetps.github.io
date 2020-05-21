@@ -93,7 +93,19 @@ Vue.use(VueRouter)
     ]
   },
 
+  //committee
+  {
+    path: '/committee', name: 'Committee', component: () => import(/* webpackChunkName: "committee" */ '../views/committee/Committee.vue')
+  },
+  {
+    path: '/committee/:committeeID/', component: () => import(/* webpackChunkName: "committee-committeeID" */ '../views/committee/CommitteeInstance.vue'),
+  },
 
+  //404
+  {
+    path: '*',
+    redirect: '/',
+  },
   
 ]
 
