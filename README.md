@@ -1,19 +1,4 @@
-# buetps-2020
-
-## Project setup
-```
-npm install
-```
-
-### Compiles and hot-reloads for development
-```
-npm run serve
-```
-
-### Compiles and minifies for production
-```
-npm run build
-```
-
-### Customize configuration
-See [Configuration Reference](https://cli.vuejs.org/config/).
+<!DOCTYPE html>
+<html>
+<a href="https://buetps.netlify.app">buetps.netlify.app</a>
+</html>
