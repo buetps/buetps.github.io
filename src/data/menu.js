@@ -21,7 +21,7 @@ var data = [
     },
     {
         name: "Discovering Streets",
-        link: "/workshop/discoveringstreets"
+        link: "/workshop/discovering-streets"
     },
     {
         name: "Photography Quintessentials",

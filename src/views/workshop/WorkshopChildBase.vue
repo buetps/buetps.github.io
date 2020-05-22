@@ -1,6 +1,6 @@
 <template>
   <div>
-    {{workshopInstance.name}}
+    {{workshop.name}}
     <transition name=slide-left mode=out-in>
       <router-view></router-view>
     </transition>
@@ -9,24 +9,11 @@
 </template>
 
 <script>
-import workshop from "../../data/workshop";
 export default {
   computed: {
-    workshopID(){
-      return this.$route.params.workshopID;
+    workshop(){
+      return this.$store.state.workshop;
     },
-    workshopInstance(){
-      var workshopID = this.$route.params.workshopID;
-      return workshop.find(function(item){return item.id === workshopID});
-    } 
   },
-  mounted(){
-    var workshopID = this.$route.params.workshopID,
-        workshopInstance = workshop.find(function(item){return item.id === workshopID});
-
-    if(workshopInstance==null){
-      this.$router.replace("/");
-    }
-  }
 }
 </script>

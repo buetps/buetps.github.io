@@ -1,6 +1,8 @@
 import Vue from 'vue'
 import VueRouter from 'vue-router'
 
+import store from "../store"
+
 import Home from '../views/Home.vue'
 
 import People from '../views/people/People.vue'
@@ -111,6 +113,17 @@ Vue.use(VueRouter)
 
 const router = new VueRouter({
   routes
+})
+
+router.beforeEach((to, from, next) => {
+  store.dispatch("validateRouteParams", to.params)
+    .then(response => {
+      if(response){
+        next();
+      } else {
+        next("/");
+      }
+    })
 })
 
 export default router

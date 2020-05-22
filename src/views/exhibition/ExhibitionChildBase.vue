@@ -1,6 +1,6 @@
 <template>
   <div>
-    {{exhibitionInstance.name}}
+    {{exhibition.name}}
     <transition name=slide-left mode=out-in>
       <router-view></router-view>
     </transition>
@@ -9,24 +9,11 @@
 </template>
 
 <script>
-import exhibition from "../../data/exhibition";
 export default {
   computed: {
-    exhibitionID(){
-      return this.$route.params.exhibitionID;
+    exhibition(){
+      return this.$store.state.exhibition;
     },
-    exhibitionInstance(){
-      var exhibitionID = this.$route.params.exhibitionID;
-      return exhibition.find(function(item){return item.id === exhibitionID});
-    } 
   },
-  mounted(){
-    var exhibitionID = this.$route.params.exhibitionID,
-        exhibitionInstance = exhibition.find(function(item){return item.id === exhibitionID});
-
-    if(exhibitionInstance==null){
-      this.$router.replace("/");
-    }
-  }
 }
 </script>

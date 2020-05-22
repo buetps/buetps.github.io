@@ -1,15 +1,16 @@
 <template>
   <div>
-    committee instance
+    {{committee}}
   </div>
 
 </template>
 
 <script>
 export default {
-  data(){
-    return {
-    }
-  }
+  computed: {
+    committee(){
+      return this.$store.state.committee;
+    },
+  },
 }
 </script>

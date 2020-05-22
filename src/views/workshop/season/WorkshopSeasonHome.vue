@@ -1,7 +1,7 @@
 <template>
   <div>
-    <router-link v-for="(page, pageIndex) in seasonInstance.pages" 
-      :key=pageIndex :to="'/workshop/'+workshopID+'/'+seasonID+'/'+page.id">
+    <router-link v-for="(page, pageIndex) in season.pages" 
+      :key=pageIndex :to="'/workshop/'+workshop.id+'/'+season.id+'/'+page.id">
       {{page.name}}
     </router-link>
   </div>
@@ -9,32 +9,14 @@
 </template>
 
 <script>
-import workshop from "../../../data/workshop";
 export default {
   computed: {
-    workshopID(){
-      return this.$route.params.workshopID;
+    workshop(){
+      return this.$store.state.workshop;
     },
-    seasonID(){
-      return this.$route.params.seasonID;
+    season(){
+      return this.$store.state.workshop_season;
     },
-    seasonInstance(){
-       var workshopID = this.$route.params.workshopID,
-        seasonID = this.$route.params.seasonID,
-        workshopInstance = workshop.find(function(item){return item.id === workshopID});
-
-      return workshopInstance.seasons.find(function(item){return item.id === seasonID});
-    } 
   },
-  mounted(){
-    var workshopID = this.$route.params.workshopID,
-        seasonID = this.$route.params.seasonID,
-        workshopInstance = workshop.find(function(item){return item.id === workshopID}),
-        seasonInstance = workshopInstance.seasons.find(function(item){return item.id === seasonID});
-
-    if(workshopInstance==null || seasonInstance==null){
-      this.$router.replace("/");
-    }
-  }
 }
 </script>

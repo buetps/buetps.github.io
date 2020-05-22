@@ -1,6 +1,15 @@
 <template>
   <div>
-    photo
-    
+    {{photo.name}}
   </div>
 </template>
+
+<script>
+export default {
+  computed: {
+    photo(){
+      return this.$store.state.photo;
+    },
+  },
+}
+</script>
