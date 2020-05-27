@@ -1,4 +1,4 @@
-var data = [
+var navigation = [
     {
         name: "Committee",
         link: "/committee"
@@ -29,4 +29,11 @@ var data = [
     },
 ];
 
-export default data;
+var pinned = [
+    {
+        name: "VoV Call for Photos",
+        link: "/exhibition/vov/divergence/call"
+    },
+]
+
+export default {navigation,pinned};
