@@ -1,7 +1,9 @@
 <template>
-  <div>
-    {{album.name}}
-    <router-view></router-view>
+ <div>
+    <div class="display-3 font-weight-black" style="padding-right:20vw">{{album.name}}</div>
+    <transition name=slide-left mode=out-in>
+      <router-view></router-view>
+    </transition>
   </div>
 </template>
 

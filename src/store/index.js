@@ -23,8 +23,6 @@ export default new Vuex.Store({
     photo: undefined,
 
     committee: undefined,
-
-    recent: []
   },
   mutations: {
     setExhibition(state, exhibition){
@@ -93,16 +91,8 @@ export default new Vuex.Store({
 
       state.committee = undefined;
     },
-
-    addToRecent(state, path){
-      state.recent.push(path);
-    }
   },
   actions: {
-    addToRecentlyVisited({commit}, path){
-      commit("addToRecent", path);
-    },
-
     validateRouteParams({commit}, params){
       var flag = true;
       //validate exhibition

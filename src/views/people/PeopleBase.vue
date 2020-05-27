@@ -1,17 +1,10 @@
 <template>
-<div>
-  <v-row>
-    <v-col cols=12 sm=8>
-      <v-card flat>
-        {{people.name}}
-        <transition name=slide-left mode=out-in>
-          <router-view/>
-        </transition>
-      </v-card>
-    </v-col>
-  </v-row>
-
-</div>
+ <div>
+    <div :class=headingClass style="padding-right:20vw">{{people.name}}</div>
+    <transition name=slide-left mode=out-in>
+      <router-view></router-view>
+    </transition>
+  </div>
 </template>
 
 <script>
@@ -20,6 +13,13 @@ export default {
     people(){
       return this.$store.state.people;
     },
+    headingClass(){
+      if (this.$route.params.albumID){
+        return "display-1 font-weight-black";
+      } else {
+        return "display-4 font-weight-black";
+      }
+    }
   },
 }
 </script>

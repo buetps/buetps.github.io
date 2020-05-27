@@ -119,9 +119,6 @@ router.beforeEach((to, from, next) => {
   store.dispatch("validateRouteParams", to.params)
     .then(response => {
       if(response){
-
-        store.dispatch("addToRecentlyVisited", to.path);
-
         next();
       } else {
         next("/");

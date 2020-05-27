@@ -1,24 +1,14 @@
 <template>
   <v-app id="inspire">
-    <!--
-    <v-navigation-drawer app floating>
-        <v-list rounded>
-          <v-list-item link v-for="(menuItem,menuIndex) in menu" :key=menuIndex :to="menuItem.link">
-            <v-list-item-content>
-              <v-list-item-title >{{menuItem.name}}</v-list-item-title>
-            </v-list-item-content>
-          </v-list-item>
-        </v-list>
-      </v-navigation-drawer>
--->
 
-    <v-btn fab fixed flat class=ma-6 style="z-index:10;right:0" v-if=!drawer @click="drawer=true">
+    <v-btn fixed icon large class=ma-6 style="z-index:10;right:0" v-if=!drawer @click="drawer=true">
       <v-icon>mdi-menu</v-icon>
     </v-btn>
 
-    <v-navigation-drawer v-model="drawer" persistent app>
+    <v-navigation-drawer v-model="drawer" persistent app width=300>
       <v-row justify="center" align="center">
-        <div class="display-2 py-10">BUETPS</div>
+        <div class="display-2 pt-10 pb-2">BUETPS</div>
+        <div>BUET Photographic Society</div>
       </v-row>
         <v-list >
 
@@ -34,20 +24,12 @@
                <div class=pl-4>{{menuItem.name}}</div>
           </v-list-item>
 
-          <div v-if="recent!=null && recent.length>0">
-            <v-subheader>Recently Visited</v-subheader>
-            <v-divider></v-divider>
-            <v-list-item v-for="(menuItem,menuIndex) in recent" :key=menuIndex :to="menuItem" >
-                <div class=pl-4>{{menuItem}}</div>
-            </v-list-item>
-          </div>
-
         </v-list>
     </v-navigation-drawer>
 
 
     <v-content>
-      <v-container fluid>
+      <v-container fluid class=ml-12>
         <transition name=slide-left mode=out-in>
           <router-view/>
         </transition>
@@ -65,10 +47,5 @@ import menu from "./data/menu"
         menu
       }
     },
-    computed: {
-      recent() {
-        return this.$store.state.recent;
-      }
-    }
   }
 </script>
