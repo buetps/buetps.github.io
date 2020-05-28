@@ -7,7 +7,7 @@
         <router-link style="vertical-align:sub !important;" :to="'/exhibition/'+exhibition.id+'/'+season.id+'/'+page.id">{{page.name}}</router-link>
       </v-slide-item>
     </v-slide-group>
-
+    <v-divider/>
     <transition name=slide-left mode=out-in>
       <router-view/>
     </transition>
