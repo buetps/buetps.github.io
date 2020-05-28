@@ -1,8 +1,8 @@
 <template>
   <div>
-    <div class="display-3 font-weight-black" style="padding-right:20vw">{{workshop.name}}</div>
+    <router-link style="padding-right:20vw" :to="'/workshop/'+workshop.id">{{workshop.name}}</router-link>
     <transition name=slide-left mode=out-in>
-      <router-view></router-view>
+      <router-view :key=workshop></router-view>
     </transition>
   </div>
 

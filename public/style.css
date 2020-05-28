@@ -32,3 +32,17 @@
 .profile {
   border-radius: 50%;
 }
+
+.router-link-active{
+  color: black !important;
+  text-decoration: none !important;
+  font-size: 20pt;
+  font-weight: bold;
+}
+.router-link-active.router-link-exact-active{
+  color: black !important;
+  text-decoration: none !important;
+  font-size: 40pt;
+  font-weight: bolder;
+}
+

@@ -1,6 +1,6 @@
 <template>
  <div>
-    <div class="display-3 font-weight-black" style="padding-right:20vw">{{album.name}}</div>
+    <router-link style="padding-right:20vw" :to="'/people/'+people.id+'/albums/'+album.id">{{album.name}}</router-link>
     <transition name=slide-left mode=out-in>
       <router-view></router-view>
     </transition>
@@ -10,6 +10,9 @@
 <script>
 export default {
   computed: {
+    people(){
+      return this.$store.state.people;
+    },
     album(){
       return this.$store.state.album;
     },

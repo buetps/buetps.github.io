@@ -1,20 +1,17 @@
 <template>
-  <div>
-    <v-row>
-      <v-col cols=12 xs=6 sm=4 md=3 lg=3 v-for="(person,index) in people" :key="index" class=ma-5>
-        <v-card flat :to="'/people/'+person.id" outlined>
+ <div>
+    <div class="display-3 font-weight-black" style="padding-right:20vw">People</div>
+    <v-row align="center">
+      <v-col cols=12 xs=12 sm=6 md=4 lg=3 xl=2 v-for="(person,index) in people" :key="index">
+        <v-card flat :to="'/people/'+person.id" outlined height=250px>
           <v-img class="white--text align-end" :src="'./data/people/'+person.foldername+'/profile.jpg'">
-            <v-card-title>{{person.name}}</v-card-title>
           </v-img>
-          <v-card-subtitle>{{person.batch}}</v-card-subtitle>
-          <v-card-text class="text--primary">
-            <div>{{person.description}}</div>
-          </v-card-text>
+          <v-card-title>{{person.name}}</v-card-title>
+          <v-card-subtitle>Batch '{{person.batch}}</v-card-subtitle>
         </v-card>
       </v-col>
     </v-row>
   </div>
-
 </template>
 
 <script>
