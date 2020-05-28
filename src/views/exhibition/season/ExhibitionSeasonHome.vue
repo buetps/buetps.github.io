@@ -1,9 +1,6 @@
 <template>
   <div>
-    <router-link v-for="(page, pageIndex) in season.pages" 
-      :key=pageIndex :to="'/exhibition/'+exhibition.id+'/'+season.id+'/'+page.id">
-      {{page.name}}
-    </router-link>
+   descriptuio
   </div>
 
 </template>
