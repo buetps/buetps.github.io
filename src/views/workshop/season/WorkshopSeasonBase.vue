@@ -1,6 +1,6 @@
 <template>
   <div>
-    <router-link style="padding-right:20vw" :to="'/workshop/'+workshop.id+'/'+season.id">{{season.name}}</router-link>
+    <router-link :to="'/workshop/'+workshop.id+'/'+season.id">{{season.name}}</router-link>
 
     <v-slide-group show-arrows>
       <v-slide-item v-for="(page, pageIndex) in season.pages" :key=pageIndex>

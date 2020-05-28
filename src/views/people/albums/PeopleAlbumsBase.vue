@@ -1,6 +1,6 @@
 <template>
  <div>
-    <router-link style="padding-right:20vw" :to="'/people/'+people.id+'/albums/'+album.id">{{album.name}}</router-link>
+    <router-link :to="'/people/'+people.id+'/albums/'+album.id">{{album.name}}</router-link>
     <transition name=slide-left mode=out-in>
       <router-view></router-view>
     </transition>

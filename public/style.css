@@ -40,19 +40,19 @@
 } .v-slide-group a.router-link-active.router-link-exact-active{
   color: black !important;
   text-decoration: none !important;
-  font-size: 16pt;
+  font-size: 13pt;
   font-weight: bolder;
 }
 .router-link-active{
   color: black !important;
   text-decoration: none !important;
-  font-size: 25pt;
+  font-size: 20pt;
   font-weight: bold;
 }
 .router-link-active.router-link-exact-active{
   color: black !important;
   text-decoration: none !important;
-  font-size: 35pt;
+  font-size: 28pt;
   font-weight: bolder;
 }
 .v-slide-group__content{

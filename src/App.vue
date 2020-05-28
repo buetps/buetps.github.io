@@ -1,7 +1,7 @@
 <template>
   <v-app id="inspire">
 
-    <v-btn fixed icon large class=ma-6 style="z-index:10;right:0" v-if=!drawer @click="drawer=true">
+    <v-btn fixed icon class=ma-2 style="z-index:10;" v-if=!drawer @click="drawer=true">
       <v-icon>mdi-menu</v-icon>
     </v-btn>
 

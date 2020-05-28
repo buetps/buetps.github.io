@@ -1,6 +1,6 @@
 <template>
   <div>
-    <router-link style="padding-right:20vw" :to="'/workshop/'+workshop.id">{{workshop.name}}</router-link>
+    <router-link :to="'/workshop/'+workshop.id">{{workshop.name}}</router-link>
     <transition name=slide-left mode=out-in>
       <router-view :key=workshop></router-view>
     </transition>
