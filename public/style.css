@@ -36,19 +36,23 @@
 .v-slide-group a{
   color: black !important;
   text-decoration: none !important;
-  font-size: 20pt;
-  font-weight: bold;
+  font-size: 12pt;
+} .v-slide-group a.router-link-active.router-link-exact-active{
+  color: black !important;
+  text-decoration: none !important;
+  font-size: 16pt;
+  font-weight: bolder;
 }
 .router-link-active{
   color: black !important;
   text-decoration: none !important;
-  font-size: 20pt;
+  font-size: 25pt;
   font-weight: bold;
 }
 .router-link-active.router-link-exact-active{
   color: black !important;
   text-decoration: none !important;
-  font-size: 40pt;
+  font-size: 35pt;
   font-weight: bolder;
 }
 .v-slide-group__content{

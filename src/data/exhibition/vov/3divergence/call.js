@@ -1,5 +1,5 @@
 var data = {
     id: "call",
-    name: "Call"
+    name: "Call for Photos"
 };
 export default data;
