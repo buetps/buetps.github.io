@@ -38,5 +38,19 @@ export default {
       }
     },
   },
+  methods: {
+    _keyListener(e){
+      if (e.keyCode === 114 || (e.ctrlKey && e.keyCode === 70)) { 
+        e.preventDefault();
+        document.getElementById("people-search-input").focus();
+      }
+    }
+  },
+  mounted(){
+    document.addEventListener('keydown', this._keyListener);
+  },
+  destroyed() {
+    document.removeEventListener('keydown', this._keyListener);
+  }
 }
 </script>
