@@ -2,7 +2,7 @@
  <div>
     <router-link to="/people">People</router-link>
 
-    <v-text-field solo v-model=searchText placeholder="Search BUETPS Member" flat autocomplete=off></v-text-field>
+    <v-text-field solo v-model=searchText placeholder="Search BUETPS Member" flat autocomplete=off id=people-search-input></v-text-field>
 
 
     <v-row align="center">
@@ -36,7 +36,7 @@ export default {
       } else {
         return this.people;
       }
-    }
-  }
+    },
+  },
 }
 </script>

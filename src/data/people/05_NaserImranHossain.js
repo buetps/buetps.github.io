@@ -4,9 +4,14 @@ const data =
         name: "Naser Imran Hossain",
         batch: "05",
         foldername: "05_NaserImranHossain",
-        description: [
+        links: {
+            facebook: "http://facebook.com/apu",
+            instagram: "http://instagram.com/apu",
+            flickr: "http://flickr.com/apu"
+        },
+        bio: [
             "hi",
-            "I am Naser"
+            "I am naser"
         ],
         albums: [
             {
