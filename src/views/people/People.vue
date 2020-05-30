@@ -1,6 +1,7 @@
 <template>
  <div>
-    <div class="display-3 font-weight-black" style="padding-right:20vw">People</div>
+    <router-link to="/people">People</router-link>
+
     <v-row align="center">
       <v-col cols=12 xs=12 sm=6 md=4 lg=3 xl=2 v-for="(person,index) in people" :key="index">
         <v-card flat :to="'/people/'+person.id" outlined height=250px>

@@ -2,7 +2,7 @@
   <div>
     <router-link :to="'/workshop/'+workshop.id">{{workshop.name}}</router-link>
     <transition name=slide-left mode=out-in>
-      <router-view :key=workshop></router-view>
+      <router-view :key=workshop.id></router-view>
     </transition>
   </div>
 

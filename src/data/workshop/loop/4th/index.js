@@ -4,6 +4,7 @@ import call from "./call"
 var data = {
     id: "4",
     name: "Season 4",
+    season: 4,
     pages: [
         intro,
         call

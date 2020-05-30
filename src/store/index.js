@@ -112,19 +112,19 @@ export default new Vuex.Store({
                   flag = false;
                 }
               } else {
-                commit("setExhibitionPage", undefined);
+                //commit("setExhibitionPage", undefined);
               }
             } else{
               flag = false;
             }
           } else {
-            commit("setExhibitionSeason", undefined);
+            //commit("setExhibitionSeason", undefined);
           }
         } else {
           flag = false;
         }
       } else {
-        commit("setExhibition", undefined);
+        //commit("setExhibition", undefined);
       }
 
       //validate workshop
@@ -144,19 +144,19 @@ export default new Vuex.Store({
                   flag = false;
                 }
               } else {
-                commit("setWorkshopPage", undefined);
+                //commit("setWorkshopPage", undefined);
               }
             } else{
               flag = false;
             }
           } else {
-            commit("setWorkshopSeason", undefined);
+            //commit("setWorkshopSeason", undefined);
           }
         } else {
           flag = false;
         }
       } else {
-        commit("setWorkshop", undefined);
+        //commit("setWorkshop", undefined);
       }
 
       //validate people
@@ -176,19 +176,19 @@ export default new Vuex.Store({
                   flag = false;
                 }
               } else {
-                commit("setPhoto", undefined);
+                //commit("setPhoto", undefined);
               }
             } else{
               flag = false;
             }
           } else {
-            commit("setAlbum", undefined);
+            //commit("setAlbum", undefined);
           }
         } else {
           flag = false;
         }
       } else {
-        commit("setPeople", undefined);
+        //commit("setPeople", undefined);
       }
 
       //validate committee
@@ -200,7 +200,7 @@ export default new Vuex.Store({
           flag = false;
         }
       } else {
-        commit("setCommittee", undefined);
+        //commit("setCommittee", undefined);
       }
 
       if(!flag){

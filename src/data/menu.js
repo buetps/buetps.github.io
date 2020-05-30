@@ -1,8 +1,5 @@
 var navigation = [
-    {
-        name: "Committee",
-        link: "/committee"
-    },
+
     {
         name: "People",
         link: "/people"
@@ -26,6 +23,16 @@ var navigation = [
     {
         name: "Photography Quintessentials",
         link: "/workshop/quintessentials"
+    },
+
+    {
+        name: "Committee",
+        link: "/committee"
+    },
+
+    {
+        name: "Awards",
+        link: "/awards"
     },
 ];
 

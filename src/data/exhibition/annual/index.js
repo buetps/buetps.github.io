@@ -14,4 +14,8 @@ const data = {
     ]
 }
 
+data.seasons.sort(function(a,b){
+    return b.season - a.season;
+});
+
 export default data;

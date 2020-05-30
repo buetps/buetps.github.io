@@ -103,6 +103,11 @@ Vue.use(VueRouter)
     path: '/committee/:committeeID/', component: () => import(/* webpackChunkName: "committee-committeeID" */ '../views/committee/CommitteeInstance.vue'),
   },
 
+  //awards
+  {
+    path: '/awards', name: 'Awards', component: () => import(/* webpackChunkName: "awards" */ '../views/awards/Awards.vue')
+  },
+
   //404
   {
     path: '*',
