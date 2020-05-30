@@ -96,12 +96,18 @@ Vue.use(VueRouter)
   },
 
   //committee
-  
+
+
   {
-    path: '/committee', name: 'Committee', component: () => import(/* webpackChunkName: "committee" */ '../views/committee/Committee.vue')
-  },
-  {
-    path: '/committee/:committeeID/', component: () => import(/* webpackChunkName: "committee-committeeID" */ '../views/committee/CommitteeInstance.vue'),
+    path: '/committee/', name: 'Committee', component: () => import(/* webpackChunkName: "committee-base" */ '../views/committee/CommitteeBase.vue'),
+    children: [
+      {
+        path: '', component: () => import(/* webpackChunkName: "committee-home" */ '../views/committee/CommitteeHome.vue'),
+      },
+      {
+        path: ':committeeID/', component: () => import(/* webpackChunkName: "committee-committeeID" */ '../views/committee/CommitteeChild.vue'),
+      },
+    ]
   },
 
   //awards

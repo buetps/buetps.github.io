@@ -1,6 +1,5 @@
 <template>
   <div>
-    <router-link to="/committee">Committee</router-link>
     <CommitteeComponent :data=currentCommittee />
     <p class="title">Previous Committees</p>
 

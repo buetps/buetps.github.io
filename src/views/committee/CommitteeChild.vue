@@ -1,6 +1,5 @@
 <template>
  <div>
-    <div><router-link to="/committee">Committee</router-link></div>
     <div><router-link :to="'/committee/'+committee.id">Batch '{{committee.id}}</router-link></div>
     <CommitteeComponent :data=committee></CommitteeComponent>
   </div>

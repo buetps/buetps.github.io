@@ -36,35 +36,44 @@
 .v-slide-group a{
   color: black !important;
   text-decoration: none !important;
-  font-size: 12pt;
+  font-size: 14pt;
+
+  -webkit-transition: font-size .2s, font-weight .2s;
+  -moz-transition: font-size .2s, font-weight .2s;
+  -o-transition: font-size .2s, font-weight .2s;
+  transition: font-size .2s, font-weight .2s;
 } 
 .v-slide-group a:hover{
   color: black !important;
   text-decoration: none !important;
-  font-size: 14pt;
+  font-size: 16pt;
 }
 .v-slide-group a.router-link-active.router-link-exact-active{
   color: black !important;
   text-decoration: none !important;
-  font-size: 14pt;
-  font-weight: bolder;
+  font-size: 16pt;
+  font-weight: 700;
 }
+
 .router-link-active{
   color: black !important;
   text-decoration: none !important;
   font-size: 20pt;
-  font-weight: bold;
+  font-weight: 700;
 
-  -webkit-transition: font-size .2s;
-     -moz-transition: font-size .2s;
-       -o-transition: font-size .2s;
-          transition: font-size .2s;
+  -webkit-transition: font-size .2s, font-weight .2s;
+  -moz-transition: font-size .2s, font-weight .2s;
+  -o-transition: font-size .2s, font-weight .2s;
+  transition: font-size .2s, font-weight .2s;
+}
+.router-link-active:hover{
+  font-size: 24pt;
 }
 .router-link-active.router-link-exact-active{
   color: black !important;
   text-decoration: none !important;
   font-size: 28pt;
-  font-weight: bolder;
+  font-weight: 900;
 }
 .v-slide-group__content{
   display: inline !important;
