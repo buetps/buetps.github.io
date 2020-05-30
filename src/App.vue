@@ -1,14 +1,15 @@
 <template>
-  <v-app id="inspire">
+  <v-app>
 
-    <v-btn fixed icon elevation=2 class=ma-3 style="z-index:10;" v-if=!drawer @click="drawer=true">
+    <v-btn icon elevation=2 class=ma-3 style="z-index:10;position: absolute" v-if=!drawer @click="drawer=true">
       <v-img width=10px src="/img/logo.svg"></v-img>
     </v-btn>
 
     <v-navigation-drawer v-model="drawer" persistent app width=300>
       <v-row justify="center" align="center">
-        <router-link class="display-2 pt-10" flat to="/"><img src="/img/logo.svg" width=150px></router-link>
-        <!--<div>BUET Photographic Society</div>-->
+        <router-link class="pt-10" flat to="/">
+          <img src="/img/logo_noborder.svg" height=90px class=hover>
+        </router-link>
       </v-row>
       <v-list >
         <div v-if="menu.pinned.length>0">
@@ -44,8 +45,27 @@ import menu from "./data/menu"
     data(){
       return {
         drawer: true,
-        menu
+        menu,
       }
     },
   }
 </script>
+
+<style scoped>
+.hover {
+  -webkit-transition: filter .2s, opacity .3s ease-out;
+  -moz-transition: filter .2s, opacity .3s ease-out;
+  -o-transition: filter .2s, opacity .3s ease-out;
+  transition: filter .2s, opacity .3s ease-out;
+  
+} 
+.hover:hover {
+  -webkit-filter: drop-shadow(0px 3px 8px rgba(0,0,0,.3));
+  filter: drop-shadow(0px 0px 8px rgba(0,0,0,.3));
+}
+
+.hidden {
+  opacity: 0;
+}
+
+</style>

@@ -1,12 +1,12 @@
 const data = 
     {
         id: "naser.imran.hossain",
-        name: "Abdul Aziz Apu",
-        batch: "04",
-        foldername: "04_AbdulAzizApu",
+        name: "Naser Imran Hossain",
+        batch: "05",
+        foldername: "05_NaserImranHossain",
         description: [
             "hi",
-            "I am apu"
+            "I am Naser"
         ],
         albums: [
             {

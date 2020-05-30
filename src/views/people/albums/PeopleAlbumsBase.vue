@@ -17,5 +17,8 @@ export default {
       return this.$store.state.album;
     },
   },
+  mounted(){
+    window.scrollTo(0,0);
+  }
 }
 </script>

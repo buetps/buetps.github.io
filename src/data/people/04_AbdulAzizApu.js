@@ -4,7 +4,12 @@ const data =
         name: "Abdul Aziz Apu",
         batch: "04",
         foldername: "04_AbdulAzizApu",
-        description: [
+        links: {
+            facebook: "http://facebook.com/apu",
+            instagram: "http://instagram.com/apu",
+            flickr: "http://flickr.com/apu"
+        },
+        bio: [
             "hi",
             "I am apu"
         ],

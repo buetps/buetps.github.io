@@ -67,7 +67,7 @@
   transition: font-size .2s, font-weight .2s;
 }
 .router-link-active:hover{
-  font-size: 24pt;
+  font-size: 21pt;
 }
 .router-link-active.router-link-exact-active{
   color: black !important;
@@ -78,3 +78,18 @@
 .v-slide-group__content{
   display: inline !important;
 }
+
+
+/*
+.hover {
+  -webkit-transition: filter .2s, opacity .3s ease-out;
+  -moz-transition: filter .2s, opacity .3s ease-out;
+  -o-transition: filter .2s, opacity .3s ease-out;
+  transition: filter .2s, opacity .3s ease-out;
+  
+} 
+.hover:hover {
+  -webkit-filter: drop-shadow(0px 3px 8px rgba(0,0,0,.3));
+  filter: drop-shadow(0px 0px 8px rgba(0,0,0,.3));
+}
+*/
