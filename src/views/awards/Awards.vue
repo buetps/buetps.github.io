@@ -1,5 +1,6 @@
 <template>
   <div>
+      <router-link to="/awards">Awards</router-link>
     <div v-for="(award, awardIndex) in awards" :key=awardIndex>
         {{award.date.getFullYear()}}
         {{award.award}}

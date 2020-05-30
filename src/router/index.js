@@ -96,6 +96,7 @@ Vue.use(VueRouter)
   },
 
   //committee
+  
   {
     path: '/committee', name: 'Committee', component: () => import(/* webpackChunkName: "committee" */ '../views/committee/Committee.vue')
   },

@@ -1,5 +1,6 @@
 const data = {
     id: "15",
+    current: true,
     people: [
         {
             index: 1,

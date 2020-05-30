@@ -1,14 +1,17 @@
 <template>
  <div>
-    <router-link class="display-3 font-weight-black anim" style="padding-right:20vw">{{committee}}</router-link>
-    <transition name=slide-left mode=out-in>
-      <router-view></router-view>
-    </transition>
+    <div><router-link to="/committee">Committee</router-link></div>
+    <div><router-link :to="'/committee/'+committee.id">Batch '{{committee.id}}</router-link></div>
+    <CommitteeComponent :data=committee></CommitteeComponent>
   </div>
 </template>
 
 <script>
+import CommitteeComponent from "../../components/CommitteeComponent"
 export default {
+  components: {
+    CommitteeComponent
+  },
   computed: {
     committee(){
       return this.$store.state.committee;
