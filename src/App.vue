@@ -1,9 +1,7 @@
 <template>
   <v-app>
 
-    <v-btn icon elevation=2 class=ma-3 style="z-index:10;position: absolute" v-if=!drawer @click="drawer=true">
-      <v-img width=10px src="/img/logo.svg"></v-img>
-    </v-btn>
+    <v-card style="z-index:1;position: absolute;" height=100% width=18px tile v-if=!drawer @click="drawer=true"></v-card>
 
     <v-navigation-drawer v-model="drawer" persistent app width=300>
       <v-row justify="center" align="center">
@@ -24,10 +22,9 @@
               <div class=pl-4>{{menuItem.name}}</div>
         </v-list-item>
       </v-list>
-      <v-spacer/>
-      
     </v-navigation-drawer>
 
+  
 
     <v-content>
       <v-container fluid class=pa-12>
@@ -36,6 +33,9 @@
         </transition>
       </v-container>
     </v-content>
+    
+    <v-btn class=about-info icon small style="z-index:1;position: absolute;bottom:12px;right:12px;"><v-icon>mdi-information-outline</v-icon></v-btn>
+      
   </v-app>
 </template>
 
@@ -62,6 +62,19 @@ import menu from "./data/menu"
 .hover:hover {
   -webkit-filter: drop-shadow(0px 3px 8px rgba(0,0,0,.3));
   filter: drop-shadow(0px 0px 8px rgba(0,0,0,.3));
+}
+
+.about-info {
+  -webkit-transition: filter .2s, opacity .3s ease-out;
+  -moz-transition: filter .2s, opacity .3s ease-out;
+  -o-transition: filter .2s, opacity .3s ease-out;
+  transition: filter .2s, opacity .3s ease-out;
+  opacity: 0.1;
+} 
+.about-info:hover {
+  -webkit-filter: drop-shadow(0px 3px 8px rgba(0,0,0,.3));
+  filter: drop-shadow(0px 0px 8px rgba(0,0,0,.3));
+  opacity:0.7;
 }
 
 .hidden {
