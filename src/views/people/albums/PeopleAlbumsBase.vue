@@ -3,7 +3,7 @@
     <router-link :to="'/people/'+people.id+'/albums/'+album.id">{{album.name}}</router-link> 
     <a class="mx-2" @click="descriptionFlag=true">info</a>
 
-    <v-overlay :value="descriptionFlag" color=#FFFFFF opacity=1 z-index=100 dark=false>
+    <v-overlay :value="descriptionFlag" color=#FFFFFF opacity=1 z-index=100 :dark=false>
       <v-btn icon @click="descriptionFlag = false" fixed top=20px right=20px><v-icon>mdi-close</v-icon></v-btn>\
 
       <v-container fluid>

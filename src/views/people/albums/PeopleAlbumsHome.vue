@@ -26,7 +26,6 @@ export default {
   methods: {
     resizeListener(e){
       this.height = window.innerHeight-300;
-      console.log("resize");
     }
   },
   mounted(){
