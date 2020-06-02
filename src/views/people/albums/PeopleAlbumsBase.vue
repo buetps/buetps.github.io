@@ -1,16 +1,19 @@
 <template>
  <div>
     <router-link :to="'/people/'+people.id+'/albums/'+album.id">{{album.name}}</router-link> 
-    <a class="mx-2" @click="descriptionFlag=true">info</a>
 
     <v-overlay :value="descriptionFlag" color=#FFFFFF opacity=1 z-index=100 :dark=false>
-      <v-btn icon @click="descriptionFlag = false" fixed top=20px right=20px><v-icon>mdi-close</v-icon></v-btn>\
-
       <v-container fluid>
         <v-row>
           <v-col cols="12">
-            <v-row align=center justify=center>
-                <p style="width:70%" v-for="(paragraph, paragraphIndex) in album.description" :key=paragraphIndex>{{paragraph}}</p>
+            <v-row justify=center>
+              <v-col cols=12 xs=12 md=6 style="min-width:500px">
+                <div style="font-size: 20pt;font-weight: 700;">{{people.name}}</div>
+                <div style="font-size: 28pt;font-weight: 900;">{{album.name}}</div>
+                <p v-for="(paragraph, paragraphIndex) in album.description" :key=paragraphIndex>{{paragraph}}</p>
+                <v-progress-circular indeterminate size="24" v-if="!loadedFlag"></v-progress-circular>
+                <v-btn block large text @click="descriptionFlag = false" v-if="loadedFlag"><v-icon>mdi-chevron-right</v-icon></v-btn>
+              </v-col>
             </v-row>
           </v-col>
         </v-row>
@@ -36,11 +39,42 @@ export default {
   },
   data(){
     return {
-      descriptionFlag: false,
+      descriptionFlag: true,
+      loadedFlag: false,
     }
+  },
+  methods: {
+    preloadImages(album, allImagesLoadedCallback){
+      var loadedCounter = 0;
+      var toBeLoadedNumber = album.photos.length;
+      var directory = '/data/people/'+this.people.id+'/'+album.id+'/';
+      album.photos.forEach(function(photo){
+        preloadImage(directory + photo.id + ".jpg", function(){
+          loadedCounter++;
+          console.log('Number of loaded images: ' + loadedCounter);
+          if(loadedCounter == toBeLoadedNumber){
+            allImagesLoadedCallback();
+          }
+        });
+      });
+
+      function preloadImage(url, anImageLoadedCallback){
+        var img = new Image();
+        img.onload = anImageLoadedCallback;
+        img.src = url;
+      };
+    }
+
   },
   mounted(){
     window.scrollTo(0,0);
+    var component = this;
+    //preload album
+    this.preloadImages(this.album, 
+      function(){
+        component.loadedFlag = true;
+      }
+    );
   }
 }
 </script>

@@ -60,11 +60,13 @@ export default {
   },
 
   mounted(){
+    /*
     for(var i=0;i<this.people.albums.length;i++){
       for(var j=0;j<this.people.albums[i].photos.length;j++){
         this.preloadImage("/data/people/"+this.people.id+"/"+this.people.albums[i].id+"/"+this.people.albums[i].photos[j].id+".jpg");
       }
     }
+    */
   }
 }
 </script>
