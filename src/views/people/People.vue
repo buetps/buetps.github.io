@@ -2,13 +2,13 @@
  <div>
     <router-link to="/people">People</router-link>
 
-    <v-text-field solo v-model=searchText placeholder="Search BUETPS Member" flat autocomplete=off id=people-search-input></v-text-field>
+    <v-text-field solo v-model=searchText placeholder="Search" flat autocomplete=off id=people-search-input></v-text-field>
 
 
     <v-row align="center">
       <v-col cols=12 xs=12 sm=12 md=6 lg=4 xl=3 v-for="(person,index) in matchedPeople" :key="index">
         <v-card flat :to="'/people/'+person.id" outlined>
-          <v-img class="white--text align-end" :src="'./data/people/'+person.foldername+'/profile.jpg'" height=300px>
+          <v-img class="white--text align-end" :src="'./data/people/'+person.id+'/profile.jpg'" height=300px>
           <v-card-title>{{person.name}}</v-card-title>
           </v-img>
         </v-card>

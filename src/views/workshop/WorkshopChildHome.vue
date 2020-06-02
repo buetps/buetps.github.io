@@ -1,4 +1,5 @@
 <template>
+<div>
   <v-row align="center">
     <v-col cols=12 v-for="(season, seasonIndex) in workshop.seasons" :key=seasonIndex>
       <v-card flat :to="'/workshop/'+workshop.id+'/'+season.id" outlined width=100%>
@@ -6,6 +7,7 @@
       </v-card>
     </v-col>
   </v-row>
+</div>
 </template>
 
 <script>

@@ -1,7 +1,8 @@
 <template>
   <v-app>
 
-    <v-card style="z-index:1;position: absolute;" height=100% width=18px tile v-if=!drawer @click="drawer=true"></v-card>
+    <v-card style="z-index:1;position: absolute;" height=100% width=18px tile v-if=!drawer @click="drawer=true">
+    </v-card>
 
     <v-navigation-drawer v-model="drawer" persistent app width=300>
       <v-row justify="center" align="center">

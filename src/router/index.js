@@ -99,7 +99,7 @@ Vue.use(VueRouter)
 
 
   {
-    path: '/committee/', name: 'Committee', component: () => import(/* webpackChunkName: "committee-base" */ '../views/committee/CommitteeBase.vue'),
+    path: '/committee/', component: () => import(/* webpackChunkName: "committee-base" */ '../views/committee/CommitteeBase.vue'),
     children: [
       {
         path: '', component: () => import(/* webpackChunkName: "committee-home" */ '../views/committee/CommitteeHome.vue'),

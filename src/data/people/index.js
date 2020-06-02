@@ -1,9 +1,11 @@
-import AbdulAzizApu from "./04_AbdulAzizApu"
-import NaserImranHossain from "./05_NaserImranHossain"
+import AbdulAzizApu from "./abdul.aziz.apu"
+import NaserImranHossain from "./naser.imran.hossain"
+import FahimHossain from "./fahim.hossain"
 
 const data = [
     AbdulAzizApu,
     NaserImranHossain,
+    FahimHossain
 ];
 
 export default data;
