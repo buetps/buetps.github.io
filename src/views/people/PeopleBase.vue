@@ -14,5 +14,8 @@ export default {
       return this.$store.state.people;
     },
   },
+  mounted(){
+    window.scrollTo(0,0);
+  }
 }
 </script>

@@ -19,28 +19,46 @@
     <v-col cols=12 xs=12 sm=12 md=7 lg=8>
       <v-row align="center">
         <v-col cols=12 xs=12>
-          <p style="text-align: justify;" v-for="(paragraph, paragraphIndex) in people.bio" :key=paragraphIndex>{{paragraph}}</p>
-        </v-col>
-      </v-row>
-      <v-row align="center">
-        <v-col cols=12 xs=12 sm=12 md=6 v-for="(album, albumIndex) in people.albums" :key=albumIndex>
-          <v-card flat :to="'/people/'+people.id+'/albums/'+album.id" outlined>
-            <v-img :src="'/data/people/'+people.id+'/'+album.id+'/'+album.photos[0].id+'.jpg'" height=200px></v-img>
-            <v-card-title>{{album.name}}</v-card-title>
+
+          <v-card flat>
+            <v-card-title>Bio</v-card-title>
+            <v-card-text style="text-align: justify;" v-for="(paragraph, paragraphIndex) in people.bio" :key=paragraphIndex>
+              {{paragraph}}
+            </v-card-text>
           </v-card>
+
+          <v-card flat>
+            <v-card-title>Awards</v-card-title>
+            <v-card-text style="text-align: justify;" v-for="(award, awardIndex) in awards" :key=awardIndex>
+              {{award}}
+            </v-card-text>
+          </v-card>
+
+          <v-card flat>
+            <v-card-text style="text-align: right;">
+              <v-btn text :to="'/people/'+people.id+'/albums'">View Albums</v-btn>
+            </v-card-text>
+          </v-card>
+
         </v-col>
       </v-row>
+      
     </v-col>
 
   </v-row>
 </template>
 
 <script>
+import awards from '../../data/awards'
 export default {
   computed: {
     people(){
       return this.$store.state.people;
     },
+    awards(){
+      var peopleID = this.people.id;
+      return awards.filter(function(item){return item.photographerID == peopleID});
+    }
   },
   methods: {
     getIconByLinkID(linkID){

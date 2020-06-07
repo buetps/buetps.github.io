@@ -39,9 +39,11 @@ Vue.use(VueRouter)
           {
             path: '', component: () => import(/* webpackChunkName: "people-album-home" */ '../views/people/albums/PeopleAlbumsHome.vue')
           },
+          /*
           {
-            path: ':photoID', component: () => import(/* webpackChunkName: "people-album-photo" */ '../views/people/albums/PeopleAlbumsPhoto.vue')
+            path: ':photoID', component: () => import(/* webpackChunkName: "people-album-photo" */ /* '../views/people/albums/PeopleAlbumsHome.vue')
           },
+          */
         ]
       },
     ]

@@ -20,6 +20,7 @@ const data =
                 photos: [
                     {
                         id: "1",
+                        name: "photo name"
                     },
                     {
                         id: "2",

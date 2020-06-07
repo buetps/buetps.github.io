@@ -10,6 +10,11 @@ const data = [
         photographerID: "abdul.aziz.apu",
         award: "Second Prize in ABCD2"
     },
+    {
+        date: new Date(2014, 6, 8),
+        photographerID: "fahim.hossain",
+        award: "Second Prize in ABCD2"
+    },
 ]
 
 data.sort(function(a,b){
