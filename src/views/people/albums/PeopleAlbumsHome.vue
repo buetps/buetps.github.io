@@ -10,25 +10,29 @@
         <v-col cols="12">
           <v-row justify=center>
 
-            <v-col cols=12 xs=12 md=8 v-if="!galleryFlag">
-              <div style="font-size: 20pt;font-weight: 700;">{{people.name}}</div>
-              <div style="font-size: 28pt;font-weight: 900;">{{album.name}}</div>
+            <v-col cols=12 xs=10 md=8 xl=6 v-if="!galleryFlag">
+              <div><router-link :to="'/people/'+people.id">{{people.name}}</router-link></div>
+              <div><router-link :to="'/people/'+people.id+'/albums/'+album.id">{{album.name}}</router-link></div>
               <p style="text-align:justify" v-for="(paragraph, paragraphIndex) in album.description" :key=paragraphIndex>{{paragraph}}</p>
-              <v-progress-circular indeterminate size="24" v-if="!loadedFlag"></v-progress-circular>
-              <v-btn block large text @click="galleryFlag=true" v-if="loadedFlag"><v-icon>mdi-chevron-right</v-icon></v-btn>
+              <v-progress-circular indeterminate size="24" v-if="!loadedFlag" style="position:fixed;bottom:18px;right:18px;"></v-progress-circular>
+              <v-btn style="z-index:101" large fixed bottom right icon @click="galleryFlag=true" v-if="loadedFlag"><v-icon>mdi-chevron-right</v-icon></v-btn>
             </v-col>
 
             <v-card :max-height=height :max-width=width v-if="galleryFlag" flat tile>
-              <div style="z-index:101;position:fixed;bottom:18px;left:24px;">
-                <p><span v-if="photo.name">{{photo.name}}</span></p>
+              <div style="z-index:102;position:fixed;top:18px;left:24px;max-width:40%">
+                <p><span>{{selectedPhotoIndex+1}} / {{album.photos.length}} </span><span v-if="selectedPhoto.name"> - {{selectedPhoto.name}}</span></p>
               </div>
-              <div style="z-index:101;position:fixed;bottom:18px;right:24px;">
+              <div style="z-index:102;position:fixed;bottom:18px;left:24px;max-width:40%">
+                <v-btn style="z-index:101" icon large @click=goLeft :disabled="selectedPhotoIndex==0"><v-icon>mdi-chevron-left</v-icon></v-btn>
+                <v-btn style="z-index:101" icon large @click=goRight :disabled="selectedPhotoIndex == album.photos.length-1"><v-icon>mdi-chevron-right</v-icon></v-btn>
+              </div>
+              <div style="z-index:101;position:fixed;bottom:12px;right:24px;text-align:right">
                 <p>© {{people.name}}</p>
               </div>
-              <v-img :src="'/data/people/'+people.id+'/'+album.id+'/'+photo.id+'.jpg'" :height=height contain></v-img>
+              <v-img v-for="(photo,photoIndex) in album.photos" :key=photoIndex v-show="photo.id==selectedPhoto.id" :src="'/data/people/'+people.id+'/'+album.id+'/'+photo.id+'.jpg'" :height=height contain></v-img>
             </v-card>
               <!--
-              <v-carousel hide-delimiters mandatory :value=selectedPhoto :continuous="false" >
+              <v-carousel hide-delimiters mandatory :value=selectedPhotoIndex :continuous="false" >
                 <v-carousel-item v-for="(photo, photoIndex) in album.photos" :key=photoIndex transition="fade-transition" reverse-transition="fade-transition">
                   <v-img :src="'/data/people/'+people.id+'/'+album.id+'/'+photo.id+'.jpg'" max-width=90%></v-img>
                   <p>{{photo.description}}asdasd</p>
@@ -53,17 +57,17 @@ export default {
     album(){
       return this.$store.state.album;
     },
-    photo(){
-      return this.album.photos[this.selectedPhoto];
+    selectedPhoto(){
+      return this.album.photos[this.selectedPhotoIndex];
     }
   },
   data(){
     return {
       loadedFlag: false,
-      selectedPhoto: 0,
+      selectedPhotoIndex: 0,
       galleryFlag: false,
       height: window.innerHeight-150,
-      width: window.innerWidth-100,
+      width: window.innerWidth-70,
     }
   },
   methods: {
@@ -87,25 +91,37 @@ export default {
         img.src = url;
       };
     },
+    goLeft(){
+      if(this.selectedPhotoIndex != 0){
+        this.selectedPhotoIndex--; 
+      }
+    },
+    goRight(){
+      if(this.selectedPhotoIndex != this.album.photos.length-1){
+        this.selectedPhotoIndex++; 
+      }
+    },
     _keyListener(e){
       if(this.galleryFlag){
         switch(e.keyCode){
           case 37:
-            if(this.selectedPhoto != 0){
-              this.selectedPhoto--; 
-            }
+            this.goLeft();
             break;
           case 39:
-            if(this.selectedPhoto != this.album.photos.length-1){
-              this.selectedPhoto++; 
-            }
+            this.goRight();
             break;
           }
+        }
+
+        switch(e.keyCode){
+          case 27:
+            this.$router.replace('/people/'+this.people.id+'/albums');
+            break
         }
       },
       resizeListener(e){
         this.height = window.innerHeight-150;
-        this.width = window.innerWidth-100;
+        this.width = window.innerWidth-70;
       }
   },
   mounted(){

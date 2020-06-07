@@ -20,7 +20,7 @@ const data =
                 photos: [
                     {
                         id: "1",
-                        name: "photo name"
+                        name: "photo name is very very very very very very long"
                     },
                     {
                         id: "2",
